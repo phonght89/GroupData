@@ -9,10 +9,13 @@
 
     public partial class GroupDataControl : UserControl
     {
+        public GroupDataControl(){
+            this.InitializeComponent();
+        }
         public GroupDataControl(GroupItemModel data)
         {
             this.InitializeComponent();
-            this.sizeGrid = this.lci_Grid.Size;
+            this.sizeGrid = this.Size;
             this.dataItem = data;
             this.LoadData();
         }
@@ -44,18 +47,20 @@
             this.showGroup = !this.showGroup;
             if (this.showGroup)
             {
-                var dragControlGroup1 = new LayoutItemDragController(
-                    this.lci_Grid,
-                    this.lciHeader,
-                    DevExpress.XtraLayout.Utils.InsertLocation.After,
-                     DevExpress.XtraLayout.Utils.LayoutType.Vertical);
-                this.lci_Grid.RestoreFromCustomization(dragControlGroup1);
-                this.lci_Grid.Size = this.sizeGrid;
+                //var dragControlGroup1 = new LayoutItemDragController(
+                //    this.lciGrid,
+                //    this.lciHeader,
+                //    DevExpress.XtraLayout.Utils.InsertLocation.After,
+                //     DevExpress.XtraLayout.Utils.LayoutType.Vertical);
+                //this.lciGrid.RestoreFromCustomization(dragControlGroup1);
+                //this.lciGrid.Size = this.sizeGrid;
+                this.Height = this.sizeGrid.Height;
                 this.btExpand.ImageIndex = 0;
             }
             else
             {
-                this.lci_Grid.HideToCustomization();
+                this.Height = 47;
+                //this.lciGrid.HideToCustomization();
                 this.btExpand.ImageIndex = 1;
             }
         }
@@ -65,7 +70,6 @@
             this.check_all_new_group.Checked = !this.check_all_older_group.Checked;
             this.ReloadDataGrid(this.check_all_older_group.Checked);
         }
-
         private void check_all_new_group1_CheckStateChanged(object sender, System.EventArgs e)
         {
             this.check_all_older_group.Checked = !this.check_all_new_group.Checked;

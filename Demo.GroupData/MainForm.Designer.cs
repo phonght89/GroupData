@@ -28,67 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.lciMain = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lciMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.SuspendLayout();
             // 
-            // panelControl1
+            // xtraScrollableControl1
             // 
-            this.panelControl1.Controls.Add(this.lciMain);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1152, 620);
-            this.panelControl1.TabIndex = 0;
-            // 
-            // lciMain
-            // 
-            this.lciMain.Location = new System.Drawing.Point(37, 8);
-            this.lciMain.MaximumSize = new System.Drawing.Size(1070, 600);
-            this.lciMain.MinimumSize = new System.Drawing.Size(1070, 600);
-            this.lciMain.Name = "lciMain";
-            this.lciMain.OptionsView.AutoSizeModeInLayoutControl = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.lciMain.Root = this.layoutControlGroup1;
-            this.lciMain.Size = new System.Drawing.Size(1070, 600);
-            this.lciMain.TabIndex = 0;
-            this.lciMain.Text = "layoutControl1";
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1070, 600);
-            this.layoutControlGroup1.Text = "layoutControlGroup1";
-            this.layoutControlGroup1.TextVisible = false;
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(20, 20);
+            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1090, 753);
+            this.xtraScrollableControl1.TabIndex = 4;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 620);
-            this.Controls.Add(this.panelControl1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1482, 853);
+            this.Controls.Add(this.xtraScrollableControl1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lciMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraLayout.LayoutControl lciMain;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
+
     }
 }

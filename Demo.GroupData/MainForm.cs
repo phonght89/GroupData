@@ -13,6 +13,7 @@
         {
             this.InitializeComponent();
             this.listGroupData = new BindingList<GroupItemModel>();
+            this.xtraScrollableControl1.Width = 1070;
             this.LoadData();
         }
 
@@ -59,7 +60,7 @@
         private void CreateControlWithData(GroupItemModel dataModel)
         {
             var controlGroup = new GroupDataControl(dataModel);
-            this.lciMain.Controls.Add(controlGroup);
-        }
+            controlGroup.Dock = DockStyle.Top;
+            this.xtraScrollableControl1.Controls.Add(controlGroup);}
     }
 }
