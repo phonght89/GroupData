@@ -1,4 +1,6 @@
-﻿namespace Demo.GroupData.Controls
+﻿using System;
+
+namespace Demo.GroupData.Controls
 {
     using System.Drawing;
     using System.Windows.Forms;
@@ -15,8 +17,9 @@
         public GroupDataControl(GroupItemModel data)
         {
             this.InitializeComponent();
-            this.sizeGrid = this.Size;
             this.dataItem = data;
+            this.ReSizeGridByData();
+            this.sizeGrid = this.Size;
             this.LoadData();
         }
 
@@ -24,6 +27,16 @@
         {
             this.gridControl1.DataSource = this.dataItem.Items;
             this.gridControl1.Refresh();
+        }
+        private void ReSizeGridByData()
+        {
+            var sumRowHeight = dataItem.Items.Count * 20 - (dataItem.Items.Count - 2);
+            if (sumRowHeight < this.gridControl1.Height)
+            {
+                var shrinkHeight = this.gridControl1.Height - sumRowHeight;
+                this.Height -= shrinkHeight;
+                this.gridControl1.Height -= shrinkHeight;
+            }
         }
 
         private GroupItemModel DataItem

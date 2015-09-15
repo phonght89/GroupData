@@ -49,7 +49,13 @@
             groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
             groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
             groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
-            this.listGroupData.Add(groupItem3);
+            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
+            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
+            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
+            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
+            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
+            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
+            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));this.listGroupData.Add(groupItem3);
 
             foreach (var groupItem in listGroupData)
             {

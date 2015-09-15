@@ -30,7 +30,6 @@ namespace Demo.GroupData.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupDataControl));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panel_dataNew = new System.Windows.Forms.Panel();
@@ -41,7 +40,7 @@ namespace Demo.GroupData.Controls
             this.check_all_older_group = new DevExpress.XtraEditors.CheckEdit();
             this.panelExpand = new System.Windows.Forms.Panel();
             this.btExpand = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
             this.panel_dataOlder = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
