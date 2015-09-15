@@ -35,7 +35,7 @@
             // 
             this.xtraScrollableControl1.Location = new System.Drawing.Point(20, 20);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(1090, 753);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1100, 753);
             this.xtraScrollableControl1.TabIndex = 4;
             // 
             // MainForm

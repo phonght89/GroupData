@@ -4,9 +4,10 @@
 
     public class GroupItemModel
     {
-        public GroupItemModel(string id)
+        public GroupItemModel(string id, bool expandRow = false)
         {
             this.id = id;
+            this.expandRow = expandRow;
             this.isChange = false;
             this.Items = new BindingList<DataItemModel>();
         }
@@ -24,6 +25,16 @@
 
         private bool isChange;
 
+        public bool ExpandRow
+        {
+            get { return this.expandRow; }
+            set
+            {
+                this.expandRow = value;
+            }
+        }
+
+        private bool expandRow;
 
         public string Id
         {

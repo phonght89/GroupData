@@ -55,7 +55,18 @@
             groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
             groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
             groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
-            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));this.listGroupData.Add(groupItem3);
+            groupItem3.Items.Add(new DataItemModel("Ort", "Aurau", "Aurau", true));
+            this.listGroupData.Add(groupItem3);
+
+            var groupItem4 = new GroupItemModel("4", true);
+            groupItem4.Items.Add(new DataItemModel("1", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5000 Aarau\n +AHV", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5100 Aarau\n +AHV", false, true));
+            groupItem4.Items.Add(new DataItemModel("2", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5000 Aarau\n +AHV", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5200 Aarau\n +AHV", true));
+            groupItem4.Items.Add(new DataItemModel("3", "Bmeise", "Bmeise", true));
+            groupItem4.Items.Add(new DataItemModel("4", "Cmeise", string.Empty, true));
+            groupItem4.Items.Add(new DataItemModel("5", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5000 Aarau\n +AHV", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5200 Aarau\n +AHV", true));
+            groupItem4.Items.Add(new DataItemModel("6", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5000 Aarau\n +AHV", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5200 Aarau\n +AHV", true));
+            groupItem4.Items.Add(new DataItemModel("7", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5000 Aarau\n +AHV", "Aneliese Ameise\n +Name: Aneliese Ameise \n +Adresse: Hauptstransse\n 5200 Aarau\n +AHV", true));
+            this.listGroupData.Add(groupItem4);
 
             foreach (var groupItem in listGroupData)
             {
@@ -65,8 +76,19 @@
 
         private void CreateControlWithData(GroupItemModel dataModel)
         {
-            var controlGroup = new GroupDataControl(dataModel);
-            controlGroup.Dock = DockStyle.Top;
-            this.xtraScrollableControl1.Controls.Add(controlGroup);}
+            if (dataModel.ExpandRow)
+            {
+                var controlGroup = new GroupDataExpandRowControl(dataModel);
+                controlGroup.Dock = DockStyle.Top;
+                this.xtraScrollableControl1.Controls.Add(controlGroup);
+            }
+            else
+            {
+                var controlGroup = new GroupDataControl(dataModel);
+                controlGroup.Dock = DockStyle.Top;
+                this.xtraScrollableControl1.Controls.Add(controlGroup);
+            }
+        }
+
     }
 }

@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupDataForm));
             this.pl_Main = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.dataDemoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataDemoBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.buttonExpanRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -65,7 +64,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
             this.check_all_new_group2 = new DevExpress.XtraEditors.CheckEdit();
@@ -139,7 +138,7 @@
             this.pl_Main.Controls.Add(this.btn_Save);
             this.pl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pl_Main.Location = new System.Drawing.Point(0, 0);
-            this.pl_Main.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pl_Main.Margin = new System.Windows.Forms.Padding(4);
             this.pl_Main.Name = "pl_Main";
             this.pl_Main.Size = new System.Drawing.Size(1541, 784);
             this.pl_Main.TabIndex = 0;
@@ -151,7 +150,7 @@
             this.layoutControl1.Controls.Add(this.panelControl1);
             this.layoutControl1.Controls.Add(this.panelControl8);
             this.layoutControl1.Location = new System.Drawing.Point(47, 31);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(522, 395, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
@@ -162,17 +161,17 @@
             // gridControl2
             // 
             this.gridControl2.DataSource = this.dataDemoBindingSource;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Location = new System.Drawing.Point(10, 382);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.buttonExpanRow,
             this.itemCheck,
             this.repositoryItemRichTextEdit2});
             this.gridControl2.Size = new System.Drawing.Size(1417, 307);
-            this.gridControl2.TabIndex = 0;
+            this.gridControl2.TabIndex = 3;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -208,7 +207,7 @@
             // 
             this.buttonExpanRow.AutoHeight = false;
             this.buttonExpanRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.down16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.down16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.buttonExpanRow.Name = "buttonExpanRow";
             this.buttonExpanRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.buttonExpanRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonExpanRow_ButtonClick);
@@ -289,16 +288,16 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.dataDemoBindingSource;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Location = new System.Drawing.Point(10, 54);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.itemCheckGroup1,
             this.repositoryItemRichTextEdit1});
             this.gridControl1.Size = new System.Drawing.Size(1417, 283);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -400,7 +399,7 @@
             this.panelControl1.Controls.Add(this.panelControl3);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Location = new System.Drawing.Point(10, 10);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1417, 44);
             this.panelControl1.TabIndex = 0;
@@ -409,7 +408,7 @@
             // 
             this.panelControl5.Controls.Add(this.check_all_new_group1);
             this.panelControl5.Location = new System.Drawing.Point(800, 0);
-            this.panelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl5.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(140, 54);
             this.panelControl5.TabIndex = 2;
@@ -417,7 +416,7 @@
             // check_all_new_group1
             // 
             this.check_all_new_group1.Location = new System.Drawing.Point(41, 20);
-            this.check_all_new_group1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_all_new_group1.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_new_group1.Name = "check_all_new_group1";
             this.check_all_new_group1.Properties.Caption = "Alle";
             this.check_all_new_group1.Size = new System.Drawing.Size(55, 20);
@@ -428,7 +427,7 @@
             // 
             this.panelControl6.Controls.Add(this.check_all_older_group1);
             this.panelControl6.Location = new System.Drawing.Point(661, 0);
-            this.panelControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(139, 54);
             this.panelControl6.TabIndex = 3;
@@ -436,7 +435,7 @@
             // check_all_older_group1
             // 
             this.check_all_older_group1.Location = new System.Drawing.Point(40, 20);
-            this.check_all_older_group1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_all_older_group1.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_older_group1.Name = "check_all_older_group1";
             this.check_all_older_group1.Properties.Caption = "Alle";
             this.check_all_older_group1.Size = new System.Drawing.Size(68, 20);
@@ -447,7 +446,7 @@
             // 
             this.panelControl4.Controls.Add(this.labelControl2);
             this.panelControl4.Location = new System.Drawing.Point(940, 0);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(468, 54);
             this.panelControl4.TabIndex = 2;
@@ -455,7 +454,7 @@
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(207, 20);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 16);
             this.labelControl2.TabIndex = 1;
@@ -465,7 +464,7 @@
             // 
             this.panelControl3.Controls.Add(this.labelControl1);
             this.panelControl3.Location = new System.Drawing.Point(172, 0);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(491, 54);
             this.panelControl3.TabIndex = 1;
@@ -473,7 +472,7 @@
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(196, 17);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 16);
             this.labelControl1.TabIndex = 0;
@@ -484,7 +483,7 @@
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.panelControl2.Controls.Add(this.simpleButton1);
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(173, 54);
             this.panelControl2.TabIndex = 0;
@@ -497,7 +496,7 @@
             this.simpleButton1.ImageIndex = 0;
             this.simpleButton1.ImageList = this.imageCollection1;
             this.simpleButton1.Location = new System.Drawing.Point(7, 6);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(32, 30);
             this.simpleButton1.TabIndex = 0;
@@ -523,7 +522,7 @@
             this.panelControl8.Controls.Add(this.panelControl12);
             this.panelControl8.Controls.Add(this.panelControl13);
             this.panelControl8.Location = new System.Drawing.Point(10, 337);
-            this.panelControl8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl8.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Size = new System.Drawing.Size(1417, 45);
             this.panelControl8.TabIndex = 4;
@@ -532,7 +531,7 @@
             // 
             this.panelControl9.Controls.Add(this.check_all_new_group2);
             this.panelControl9.Location = new System.Drawing.Point(800, 0);
-            this.panelControl9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl9.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(140, 54);
             this.panelControl9.TabIndex = 2;
@@ -540,7 +539,7 @@
             // check_all_new_group2
             // 
             this.check_all_new_group2.Location = new System.Drawing.Point(41, 20);
-            this.check_all_new_group2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_all_new_group2.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_new_group2.Name = "check_all_new_group2";
             this.check_all_new_group2.Properties.Caption = "Alle";
             this.check_all_new_group2.Size = new System.Drawing.Size(55, 20);
@@ -551,7 +550,7 @@
             // 
             this.panelControl10.Controls.Add(this.check_all_older_group2);
             this.panelControl10.Location = new System.Drawing.Point(661, 0);
-            this.panelControl10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl10.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl10.Name = "panelControl10";
             this.panelControl10.Size = new System.Drawing.Size(139, 54);
             this.panelControl10.TabIndex = 3;
@@ -559,7 +558,7 @@
             // check_all_older_group2
             // 
             this.check_all_older_group2.Location = new System.Drawing.Point(40, 20);
-            this.check_all_older_group2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_all_older_group2.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_older_group2.Name = "check_all_older_group2";
             this.check_all_older_group2.Properties.Caption = "Alle";
             this.check_all_older_group2.Size = new System.Drawing.Size(68, 20);
@@ -570,7 +569,7 @@
             // 
             this.panelControl11.Controls.Add(this.labelControl3);
             this.panelControl11.Location = new System.Drawing.Point(940, 0);
-            this.panelControl11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl11.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl11.Name = "panelControl11";
             this.panelControl11.Size = new System.Drawing.Size(468, 54);
             this.panelControl11.TabIndex = 2;
@@ -578,7 +577,7 @@
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(207, 20);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(65, 16);
             this.labelControl3.TabIndex = 1;
@@ -588,7 +587,7 @@
             // 
             this.panelControl12.Controls.Add(this.labelControl4);
             this.panelControl12.Location = new System.Drawing.Point(172, 0);
-            this.panelControl12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl12.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl12.Name = "panelControl12";
             this.panelControl12.Size = new System.Drawing.Size(491, 54);
             this.panelControl12.TabIndex = 1;
@@ -596,7 +595,7 @@
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(196, 17);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(65, 16);
             this.labelControl4.TabIndex = 0;
@@ -606,7 +605,7 @@
             // 
             this.panelControl13.Controls.Add(this.simpleButton2);
             this.panelControl13.Location = new System.Drawing.Point(0, 0);
-            this.panelControl13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl13.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl13.Name = "panelControl13";
             this.panelControl13.Size = new System.Drawing.Size(173, 54);
             this.panelControl13.TabIndex = 0;
@@ -617,7 +616,7 @@
             this.simpleButton2.ImageIndex = 0;
             this.simpleButton2.ImageList = this.imageCollection1;
             this.simpleButton2.Location = new System.Drawing.Point(7, 11);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(32, 30);
             this.simpleButton2.TabIndex = 0;
@@ -700,7 +699,7 @@
             // btn_Save
             // 
             this.btn_Save.Location = new System.Drawing.Point(1313, 735);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(136, 32);
             this.btn_Save.TabIndex = 2;
@@ -713,7 +712,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1541, 784);
             this.Controls.Add(this.pl_Main);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GroupDataForm";
             this.Text = "Demo";
             ((System.ComponentModel.ISupportInitialize)(this.pl_Main)).EndInit();
