@@ -2,6 +2,7 @@
 using Demo.GroupData.Properties;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Demo.GroupData.Controls
 {
@@ -22,7 +23,6 @@ namespace Demo.GroupData.Controls
         {
             this.InitializeComponent();
             this.dataItem = data;
-            //this.ReSizeGridByData();
             this.sizeGrid = this.Size;
             this.LoadData();
         }
@@ -31,16 +31,6 @@ namespace Demo.GroupData.Controls
         {
             this.gridControl1.DataSource = this.dataItem.Items;
             this.gridControl1.Refresh();
-        }
-        private void ReSizeGridByData()
-        {
-            var sumRowHeight = dataItem.Items.Count * 20 - (dataItem.Items.Count - 2);
-            if (sumRowHeight < this.gridControl1.Height)
-            {
-                var shrinkHeight = this.gridControl1.Height - sumRowHeight;
-                this.Height -= shrinkHeight;
-                this.gridControl1.Height -= shrinkHeight;
-            }
         }
 
         private GroupItemModel DataItem
@@ -64,20 +54,12 @@ namespace Demo.GroupData.Controls
             this.showGroup = !this.showGroup;
             if (this.showGroup)
             {
-                //var dragControlGroup1 = new LayoutItemDragController(
-                //    this.lciGrid,
-                //    this.lciHeader,
-                //    DevExpress.XtraLayout.Utils.InsertLocation.After,
-                //     DevExpress.XtraLayout.Utils.LayoutType.Vertical);
-                //this.lciGrid.RestoreFromCustomization(dragControlGroup1);
-                //this.lciGrid.Size = this.sizeGrid;
                 this.Height = this.sizeGrid.Height;
                 this.btExpand.ImageIndex = 0;
             }
             else
             {
                 this.Height = 47;
-                //this.lciGrid.HideToCustomization();
                 this.btExpand.ImageIndex = 1;
             }
         }
@@ -134,22 +116,20 @@ namespace Demo.GroupData.Controls
             if (row != null)
             {
                 var item = (DataItemModel)row;
-                item.Show = !item.Show;
+                item.Show = true;
+                this.gridView1.RefreshData();
+            }
+        }
 
-                ButtonEdit buttonExpand = sender as ButtonEdit;
-                if (buttonExpand != null)
-                {
-                    if (item.Show)
-                    {
-                        buttonExpand.Properties.Buttons[0].Visible = true;
-                        buttonExpand.Properties.Buttons[1].Visible = false;
-                    }
-                    else
-                    {
-                        buttonExpand.Properties.Buttons[0].Visible = false;
-                        buttonExpand.Properties.Buttons[1].Visible = true;
-                    }
-                }this.gridView1.RefreshData();}
+        private void btnShrinkRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var row = this.gridView1.GetFocusedRow();
+            if (row != null)
+            {
+                var item = (DataItemModel)row;
+                item.Show = false;
+                this.gridView1.RefreshData();
+            }
         }
 
         private void gridView1_CalcRowHeight(object sender, DevExpress.XtraGrid.Views.Grid.RowHeightEventArgs e)
@@ -164,5 +144,24 @@ namespace Demo.GroupData.Controls
             }
             else e.RowHeight = 15;
         }
+
+        private void gridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
+        {
+            if (e.Column.Name == "colExpand" && e.RowHandle >= 0)
+            {
+                GridView gv = sender as GridView;
+                var item = (DataItemModel)gv.GetRow(e.RowHandle);
+                if (item.Show)
+                {
+                    e.RepositoryItem = this.btnShrinkRow;
+                }
+                else
+                {
+                    e.RepositoryItem = this.btnExpandRow;
+                }
+            }
+        }
+
+        
     }
 }
