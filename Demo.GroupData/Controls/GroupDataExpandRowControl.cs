@@ -26,7 +26,6 @@ namespace Demo.GroupData.Controls
             this.sizeGrid = this.Size;
             this.LoadData();
         }
-
         private void LoadData()
         {
             this.gridControl1.DataSource = this.dataItem.Items;
