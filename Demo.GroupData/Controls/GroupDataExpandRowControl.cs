@@ -11,6 +11,7 @@ namespace Demo.GroupData.Controls
 
     using Demo.GroupData.Models;
 
+    using DevExpress.XtraGrid.Views.Grid.ViewInfo;
     using DevExpress.XtraLayout.Customization;
 
     public partial class GroupDataExpandRowControl : UserControl
@@ -23,14 +24,31 @@ namespace Demo.GroupData.Controls
         {
             this.InitializeComponent();
             this.dataItem = data;
-            this.sizeGrid = this.Size;
             this.LoadData();
-            
         }
         private void LoadData()
         {
             this.gridControl1.DataSource = this.dataItem.Items;
             this.gridControl1.Refresh();
+        }
+
+        private void gridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            this.ReSizeGridByData();
+        }
+
+        private void ReSizeGridByData()
+        {
+            this.gridControl1.Height = this.GetInvisibleRowsHeight();
+            this.height = this.gridControl1.Height + 46;
+            this.Height = this.height;
+        }
+
+        private int GetInvisibleRowsHeight()
+        {
+            GridViewInfo viewInfo = (GridViewInfo)this.gridView1.GetViewInfo();
+            int gridHeight = viewInfo.CalcRealViewHeight(new Rectangle(0, 0, int.MaxValue, int.MaxValue));
+            return gridHeight;
         }
 
         private GroupItemModel DataItem
@@ -46,7 +64,7 @@ namespace Demo.GroupData.Controls
         }
         private GroupItemModel dataItem;
 
-        private readonly Size sizeGrid;
+        private int height;
         private bool showGroup = true;
 
         private void btExpand_Click(object sender, System.EventArgs e)
@@ -54,7 +72,7 @@ namespace Demo.GroupData.Controls
             this.showGroup = !this.showGroup;
             if (this.showGroup)
             {
-                this.Height = this.sizeGrid.Height;
+                this.Height = this.height;
                 this.btExpand.ImageIndex = 0;
             }
             else
@@ -161,7 +179,5 @@ namespace Demo.GroupData.Controls
                 }
             }
         }
-
-        
     }
 }
