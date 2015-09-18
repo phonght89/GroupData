@@ -149,7 +149,6 @@ namespace Demo.GroupData.Controls
                 this.gridView1.RefreshData();
             }
         }
-
         private void gridView1_CalcRowHeight(object sender, DevExpress.XtraGrid.Views.Grid.RowHeightEventArgs e)
         {
             var dataRow = this.gridView1.GetRow(e.RowHandle);
@@ -161,6 +160,7 @@ namespace Demo.GroupData.Controls
                 else e.RowHeight = 15;
             }
             else e.RowHeight = 15;
+            
         }
 
         private void gridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
