@@ -88,6 +88,7 @@
     <Compile Include="GroupDataForm.Designer.cs">
       <DependentUpon>GroupDataForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\eCH-0039G1T1.cs" />
     <Compile Include="Models\GroupItemModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
