@@ -1172,293 +1172,6 @@ namespace Demo.GroupData.Models
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "eCH-0039G1T1-1-0")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "eCH-0039G1T1-1-0", IsNullable = true)]
-    public partial class mType
-    {
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        private string firstNameField;
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        private string lastNameField;
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        private System.DateTime fromField;
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        private System.DateTime toField;
-
-        private static System.Xml.Serialization.XmlSerializer serializer;
-
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "token")]
-        public string firstName
-        {
-            get
-            {
-                return this.firstNameField;
-            }
-            set
-            {
-                this.firstNameField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "token")]
-        public string lastName
-        {
-            get
-            {
-                return this.lastNameField;
-            }
-            set
-            {
-                this.lastNameField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-        public System.DateTime from
-        {
-            get
-            {
-                return this.fromField;
-            }
-            set
-            {
-                this.fromField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-        public System.DateTime to
-        {
-            get
-            {
-                return this.toField;
-            }
-            set
-            {
-                this.toField = value;
-            }
-        }
-
-        private static System.Xml.Serialization.XmlSerializer Serializer
-        {
-            get
-            {
-                if ((serializer == null))
-                {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(mType));
-                }
-                return serializer;
-            }
-        }
-
-        #region Serialize/Deserialize
-        /// <summary>
-        /// Serializes current mType object into an XML document
-        /// </summary>
-        /// <returns>string XML value</returns>
-        public virtual string Serialize(System.Text.Encoding encoding)
-        {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
-            try
-            {
-                memoryStream = new System.IO.MemoryStream();
-                System.Xml.XmlWriterSettings xmlWriterSettings = new System.Xml.XmlWriterSettings();
-                xmlWriterSettings.Encoding = encoding;
-                System.Xml.XmlWriter xmlWriter = XmlWriter.Create(memoryStream, xmlWriterSettings);
-                Serializer.Serialize(xmlWriter, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
-                return streamReader.ReadToEnd();
-            }
-            finally
-            {
-                if ((streamReader != null))
-                {
-                    streamReader.Dispose();
-                }
-                if ((memoryStream != null))
-                {
-                    memoryStream.Dispose();
-                }
-            }
-        }
-
-        public virtual string Serialize()
-        {
-            return Serialize(Encoding.UTF8);
-        }
-
-        /// <summary>
-        /// Deserializes workflow markup into an mType object
-        /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output mType object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
-        /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out mType obj, out System.Exception exception)
-        {
-            exception = null;
-            obj = default(mType);
-            try
-            {
-                obj = Deserialize(xml);
-                return true;
-            }
-            catch (System.Exception ex)
-            {
-                exception = ex;
-                return false;
-            }
-        }
-
-        public static bool Deserialize(string xml, out mType obj)
-        {
-            System.Exception exception = null;
-            return Deserialize(xml, out obj, out exception);
-        }
-
-        public static mType Deserialize(string xml)
-        {
-            System.IO.StringReader stringReader = null;
-            try
-            {
-                stringReader = new System.IO.StringReader(xml);
-                return ((mType)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
-            }
-            finally
-            {
-                if ((stringReader != null))
-                {
-                    stringReader.Dispose();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Serializes current mType object into file
-        /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
-        /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, System.Text.Encoding encoding, out System.Exception exception)
-        {
-            exception = null;
-            try
-            {
-                SaveToFile(fileName, encoding);
-                return true;
-            }
-            catch (System.Exception e)
-            {
-                exception = e;
-                return false;
-            }
-        }
-
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
-        {
-            return SaveToFile(fileName, Encoding.UTF8, out exception);
-        }
-
-        public virtual void SaveToFile(string fileName)
-        {
-            SaveToFile(fileName, Encoding.UTF8);
-        }
-
-        public virtual void SaveToFile(string fileName, System.Text.Encoding encoding)
-        {
-            System.IO.StreamWriter streamWriter = null;
-            try
-            {
-                string xmlString = Serialize(encoding);
-                streamWriter = new System.IO.StreamWriter(fileName, false, Encoding.UTF8);
-                streamWriter.WriteLine(xmlString);
-                streamWriter.Close();
-            }
-            finally
-            {
-                if ((streamWriter != null))
-                {
-                    streamWriter.Dispose();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Deserializes xml markup from file into an mType object
-        /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output mType object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
-        /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, System.Text.Encoding encoding, out mType obj, out System.Exception exception)
-        {
-            exception = null;
-            obj = default(mType);
-            try
-            {
-                obj = LoadFromFile(fileName, encoding);
-                return true;
-            }
-            catch (System.Exception ex)
-            {
-                exception = ex;
-                return false;
-            }
-        }
-
-        public static bool LoadFromFile(string fileName, out mType obj, out System.Exception exception)
-        {
-            return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
-        }
-
-        public static bool LoadFromFile(string fileName, out mType obj)
-        {
-            System.Exception exception = null;
-            return LoadFromFile(fileName, out obj, out exception);
-        }
-
-        public static mType LoadFromFile(string fileName)
-        {
-            return LoadFromFile(fileName, Encoding.UTF8);
-        }
-
-        public static mType LoadFromFile(string fileName, System.Text.Encoding encoding)
-        {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
-            try
-            {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file, encoding);
-                string xmlString = sr.ReadToEnd();
-                sr.Close();
-                file.Close();
-                return Deserialize(xmlString);
-            }
-            finally
-            {
-                if ((file != null))
-                {
-                    file.Dispose();
-                }
-                if ((sr != null))
-                {
-                    sr.Dispose();
-                }
-            }
-        }
-        #endregion
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34209")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "eCH-0039G1T1-1-0")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "eCH-0039G1T1-1-0", IsNullable = true)]
     public partial class maType
     {
 
@@ -1481,17 +1194,17 @@ namespace Demo.GroupData.Models
         private string noteField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private mType m1Field;
+        private mtType mandateholder1Field;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private mType m2Field;
+        private mtType mandateholder2Field;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         public maType()
         {
-            this.m2Field = new mType();
-            this.m1Field = new mType();
+            this.mandateholder2Field = new mtType();
+            this.mandateholder1Field = new mtType();
         }
 
         public string article
@@ -1568,27 +1281,27 @@ namespace Demo.GroupData.Models
             }
         }
 
-        public mType m1
+        public mtType mandateholder1
         {
             get
             {
-                return this.m1Field;
+                return this.mandateholder1Field;
             }
             set
             {
-                this.m1Field = value;
+                this.mandateholder1Field = value;
             }
         }
 
-        public mType m2
+        public mtType mandateholder2
         {
             get
             {
-                return this.m2Field;
+                return this.mandateholder2Field;
             }
             set
             {
-                this.m2Field = value;
+                this.mandateholder2Field = value;
             }
         }
 
@@ -2135,27 +1848,12 @@ namespace Demo.GroupData.Models
     {
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private int employeeIdField;
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
         private string firstNameField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         private string lastNameField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
-
-        public int employeeId
-        {
-            get
-            {
-                return this.employeeIdField;
-            }
-            set
-            {
-                this.employeeIdField = value;
-            }
-        }
 
         [System.Xml.Serialization.XmlElementAttribute(DataType = "token")]
         public string firstName
@@ -2724,17 +2422,17 @@ namespace Demo.GroupData.Models
         private string noteField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private List<mtType> mtField;
+        private List<mtType> mtsField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private List<maType> maField;
+        private List<maType> masField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         public measureLawType()
         {
-            this.maField = new List<maType>();
-            this.mtField = new List<mtType>();
+            this.masField = new List<maType>();
+            this.mtsField = new List<mtType>();
         }
 
         public string ageCategory
@@ -2874,29 +2572,29 @@ namespace Demo.GroupData.Models
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("mt")]
-        public List<mtType> mt
+        [System.Xml.Serialization.XmlArrayItemAttribute("mt", IsNullable = false)]
+        public List<mtType> mts
         {
             get
             {
-                return this.mtField;
+                return this.mtsField;
             }
             set
             {
-                this.mtField = value;
+                this.mtsField = value;
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("ma")]
-        public List<maType> ma
+        [System.Xml.Serialization.XmlArrayItemAttribute("ma", IsNullable = false)]
+        public List<maType> mas
         {
             get
             {
-                return this.maField;
+                return this.masField;
             }
             set
             {
-                this.maField = value;
+                this.masField = value;
             }
         }
 
@@ -3134,13 +2832,13 @@ namespace Demo.GroupData.Models
         private string typeField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private string themaField;
+        private string topicField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         private string documentObjectField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private string rightField;
+        private string fileNameField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         private addressType addressField;
@@ -3201,15 +2899,15 @@ namespace Demo.GroupData.Models
             }
         }
 
-        public string thema
+        public string topic
         {
             get
             {
-                return this.themaField;
+                return this.topicField;
             }
             set
             {
-                this.themaField = value;
+                this.topicField = value;
             }
         }
 
@@ -3225,15 +2923,15 @@ namespace Demo.GroupData.Models
             }
         }
 
-        public string right
+        public string fileName
         {
             get
             {
-                return this.rightField;
+                return this.fileNameField;
             }
             set
             {
-                this.rightField = value;
+                this.fileNameField = value;
             }
         }
 
@@ -4059,6 +3757,9 @@ namespace Demo.GroupData.Models
         [EditorBrowsable(EditorBrowsableState.Never)]
         private string placeField;
 
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        private string cantonField;
+
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         public uint postcode
@@ -4083,6 +3784,18 @@ namespace Demo.GroupData.Models
             set
             {
                 this.placeField = value;
+            }
+        }
+
+        public string canton
+        {
+            get
+            {
+                return this.cantonField;
+            }
+            set
+            {
+                this.cantonField = value;
             }
         }
 
@@ -4331,9 +4044,14 @@ namespace Demo.GroupData.Models
         private System.DateTime anamnesisField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private string placeField;
+        private placeType responsibleCommunityField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
+
+        public clientCaseType()
+        {
+            this.responsibleCommunityField = new placeType();
+        }
 
         public string subjectArea
         {
@@ -4360,16 +4078,15 @@ namespace Demo.GroupData.Models
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "token")]
-        public string place
+        public placeType responsibleCommunity
         {
             get
             {
-                return this.placeField;
+                return this.responsibleCommunityField;
             }
             set
             {
-                this.placeField = value;
+                this.responsibleCommunityField = value;
             }
         }
 
@@ -4625,6 +4342,9 @@ namespace Demo.GroupData.Models
         private string emailField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
+        private placeType registeredResidenceField;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
         private string addressField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -4652,12 +4372,6 @@ namespace Demo.GroupData.Models
         private employeeType responsiblePersonField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        private placeType responsibleCommunityField;
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        private int ueField;
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
         private clientCaseType clientCaseField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
@@ -4665,9 +4379,9 @@ namespace Demo.GroupData.Models
         public clientInfoType()
         {
             this.clientCaseField = new clientCaseType();
-            this.responsibleCommunityField = new placeType();
             this.responsiblePersonField = new employeeType();
             this.hometownField = new placeType();
+            this.registeredResidenceField = new placeType();
             this.postcodePlaceField = new placeType();
         }
 
@@ -4794,6 +4508,18 @@ namespace Demo.GroupData.Models
             }
         }
 
+        public placeType registeredResidence
+        {
+            get
+            {
+                return this.registeredResidenceField;
+            }
+            set
+            {
+                this.registeredResidenceField = value;
+            }
+        }
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "token")]
         public string address
         {
@@ -4902,30 +4628,6 @@ namespace Demo.GroupData.Models
             set
             {
                 this.responsiblePersonField = value;
-            }
-        }
-
-        public placeType responsibleCommunity
-        {
-            get
-            {
-                return this.responsibleCommunityField;
-            }
-            set
-            {
-                this.responsibleCommunityField = value;
-            }
-        }
-
-        public int ue
-        {
-            get
-            {
-                return this.ueField;
-            }
-            set
-            {
-                this.ueField = value;
             }
         }
 
@@ -6351,5 +6053,5 @@ namespace Demo.GroupData.Models
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("12")]
         Item12,
-    }
+    }    
 }
