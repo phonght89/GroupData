@@ -59,7 +59,14 @@
             set
             {
                 this.useOlder = value;
-                this.useNew = !value;
+                if (value)
+                {
+                    this.useNew = false;
+                }
+                else
+                {
+                    this.useNew = !string.IsNullOrWhiteSpace(dataNew);
+                }
             }
         }
         private bool useOlder;
@@ -70,7 +77,14 @@
             set
             {
                 this.useNew = value;
-                this.useOlder = !value;
+                if (value)
+                {
+                    this.useOlder = false;
+                }
+                else
+                {
+                    this.useOlder = !string.IsNullOrWhiteSpace(dataOlder);
+                }
             }
         }
         private bool useNew;

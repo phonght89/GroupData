@@ -2404,7 +2404,7 @@ namespace Demo.GroupData.Models
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         private System.DateTime takeoverOnField;
-
+   
         [EditorBrowsable(EditorBrowsableState.Never)]
         private string takeoverByField;
 
@@ -2437,6 +2437,18 @@ namespace Demo.GroupData.Models
             this.mtsField = new List<mtType>();
         }
 
+        public override string ToString()
+        {
+            return string.Format("- AgeCategory: {0}" +
+                                 "\n- KindOfAction: {1}" +
+                                 "\n- Foundation: {2}" +
+                                 "\n- CourtDecision: {3}" +
+                                 "\n- TakeoverOn: {4}" +
+                                 "\n- TakeoverBy: {5}" +
+                                 "\n- Repeal: {6}" +
+                                 "\n- RepealReason: {7}", ageCategory, kindOfAction, foundation, courtDecision, takeoverOn, takeoverBy, repeal, repealReason);
+        }
+        
         public string Id
         {
             get { return this.idField; }
@@ -2858,6 +2870,18 @@ namespace Demo.GroupData.Models
         public documentDataType()
         {
             this.addressField = new addressType();
+        }
+
+        public override string ToString()
+        {
+            return string.Format("- Keyword: {0}" +
+                                 "\n- Affect: {1}" +
+                                 "\n- Date: {2}" +
+                                 "\n- Type: {3}" +
+                                 "\n- Topic: {4}" +
+                                 "\n- Document Object: {5}" +
+                                 "\n- File Name: {6}" +
+                                 "\n- Address: {7}", keyword, affect, date, type, topic, documentObject, fileName, address);
         }
 
         public string Id

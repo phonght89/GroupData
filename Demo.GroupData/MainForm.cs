@@ -21,6 +21,8 @@ namespace Demo.GroupData
 
         private ClientInfoGroupItemViewModel clientInfoVm;
         private RelativeInfoGroupItemViewModel relativeInfoVm;
+        private DocumentDataGroupItemViewModel documentDataVm;
+        private MeasureLawGroupItemViewModel measureLawVm;
         private void LoadData()
         {
             FileInfo olderfile = new FileInfo(Application.StartupPath + "\\" + "old.xml");
@@ -29,12 +31,24 @@ namespace Demo.GroupData
             contentType modelnew = Deserializer<contentType>(newfile);
             clientInfoVm = new ClientInfoGroupItemViewModel(modelold.clientInfo,modelnew.clientInfo);
             relativeInfoVm = new RelativeInfoGroupItemViewModel(modelold.clientInfo.Id, modelold.relativeInfos, modelnew.relativeInfos);
-            var controlGroupExpandRow = new GroupDataExpandRowControl(relativeInfoVm);
-            controlGroupExpandRow.Dock = DockStyle.Top;
-            this.xtraScrollableControl1.Controls.Add(controlGroupExpandRow);
-            var controlGroup = new GroupDataControl(clientInfoVm);
-            controlGroup.Dock = DockStyle.Top;
-            this.xtraScrollableControl1.Controls.Add(controlGroup);
+            documentDataVm = new DocumentDataGroupItemViewModel(modelold.clientInfo.Id, modelold.documentDatas, modelnew.documentDatas);
+            measureLawVm = new MeasureLawGroupItemViewModel(modelold.clientInfo.Id, modelold.measureLaws, modelnew.measureLaws);
+
+            var measureLawGroup = new GroupDataExpandRowControl(measureLawVm);
+            measureLawGroup.Dock = DockStyle.Top;
+            this.xtraScrollableControl1.Controls.Add(measureLawGroup);
+
+            var documentDataGroup = new GroupDataExpandRowControl(documentDataVm);
+            documentDataGroup.Dock = DockStyle.Top;
+            this.xtraScrollableControl1.Controls.Add(documentDataGroup);
+
+            var relativeInfoGroup = new GroupDataExpandRowControl(relativeInfoVm);
+            relativeInfoGroup.Dock = DockStyle.Top;
+            this.xtraScrollableControl1.Controls.Add(relativeInfoGroup);
+
+            var clientInfoGroup = new GroupDataControl(clientInfoVm);
+            clientInfoGroup.Dock = DockStyle.Top;
+            this.xtraScrollableControl1.Controls.Add(clientInfoGroup);
             
         }
 

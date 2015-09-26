@@ -107,7 +107,7 @@ namespace Demo.GroupData.Controls
             this.labelControl2.Location = new System.Drawing.Point(167, 14);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(40, 13);
+            this.labelControl2.Size = new System.Drawing.Size(48, 16);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Klient-/n";
             // 
@@ -128,7 +128,7 @@ namespace Demo.GroupData.Controls
             this.check_all_new_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_new_group.Name = "check_all_new_group";
             this.check_all_new_group.Properties.Caption = "Alle";
-            this.check_all_new_group.Size = new System.Drawing.Size(55, 19);
+            this.check_all_new_group.Size = new System.Drawing.Size(55, 20);
             this.check_all_new_group.TabIndex = 1;
             this.check_all_new_group.CheckStateChanged += new System.EventHandler(this.check_all_new_group1_CheckStateChanged);
             // 
@@ -150,7 +150,7 @@ namespace Demo.GroupData.Controls
             this.check_all_older_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_older_group.Name = "check_all_older_group";
             this.check_all_older_group.Properties.Caption = "Alle";
-            this.check_all_older_group.Size = new System.Drawing.Size(52, 19);
+            this.check_all_older_group.Size = new System.Drawing.Size(52, 20);
             this.check_all_older_group.TabIndex = 0;
             this.check_all_older_group.CheckedChanged += new System.EventHandler(this.check_all_older_group1_CheckedChanged);
             // 
@@ -207,7 +207,7 @@ namespace Demo.GroupData.Controls
             this.labelControl1.Location = new System.Drawing.Point(163, 13);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(40, 13);
+            this.labelControl1.Size = new System.Drawing.Size(48, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Klient-/n";
             // 
@@ -245,6 +245,7 @@ namespace Demo.GroupData.Controls
             this.gridView1.OptionsView.ShowIndicator = false;
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);
             this.gridView1.CalcRowHeight += new DevExpress.XtraGrid.Views.Grid.RowHeightEventHandler(this.gridView1_CalcRowHeight);
+            this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChanged);
             // 

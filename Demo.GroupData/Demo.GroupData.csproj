@@ -90,8 +90,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\MeasureLawGroupItemViewModel.cs" />
     <Compile Include="Models\eCH-0039G1T1.cs" />
     <Compile Include="Models\GroupItemModelBase.cs" />
+    <Compile Include="Models\DocumentDataGroupItemViewModel.cs" />
     <Compile Include="Models\RelativeInfoGroupItemViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

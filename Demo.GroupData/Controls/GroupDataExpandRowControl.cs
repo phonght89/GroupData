@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Demo.GroupData.Properties;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
@@ -95,9 +96,18 @@ namespace Demo.GroupData.Controls
 
         private void ReloadDataGrid(bool useOlder)
         {
-            foreach (var item in this.DataItem.Items)
+            foreach (var item in this.DataItem.Items.Cast<DataItemViewModelBase>())
             {
-                item.UseOlder = useOlder;
+                if (useOlder)
+                {
+                    if (!string.IsNullOrWhiteSpace(item.DataOlder))
+                        item.UseOlder = true;
+                }
+                else
+                {
+                    if (!string.IsNullOrWhiteSpace(item.DataNew))
+                        item.UseNew = true;
+                }
             }
             this.gridView1.RefreshData();
         }
@@ -113,7 +123,14 @@ namespace Demo.GroupData.Controls
                     if (value != null)
                     {
                         item.UseOlder = value.Value;
-                        this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !value.Value);
+                        if (value.Value)
+                        {
+                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], false);
+                        }
+                        else
+                        {
+                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !string.IsNullOrWhiteSpace(item.DataNew));
+                        }
                     }
                 }
                 if (e.Column == this.gridView1.Columns["UseNew"])
@@ -122,7 +139,15 @@ namespace Demo.GroupData.Controls
                     if (value != null)
                     {
                         item.UseNew = value.Value;
-                        this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !value.Value);
+
+                        if (value.Value)
+                        {
+                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], false);
+                        }
+                        else
+                        {
+                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !string.IsNullOrWhiteSpace(item.DataOlder));
+                        }
                     }
                 }
             }
@@ -176,6 +201,23 @@ namespace Demo.GroupData.Controls
                 else
                 {
                     e.RepositoryItem = this.btnExpandRow;
+                }
+            }
+        }
+
+        private void gridView1_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var gr = sender as GridView;
+            if (gr.FocusedRowHandle != (int.MinValue + 1))
+            {
+                var dataViewModel = (DataItemViewModelBase)gridView1.GetRow(gridView1.FocusedRowHandle);
+                if (this.gridView1.FocusedColumn.FieldName == "UseOlder")
+                {
+                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataOlder);
+                }
+                if (this.gridView1.FocusedColumn.FieldName == "UseNew")
+                {
+                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
                 }
             }
         }
