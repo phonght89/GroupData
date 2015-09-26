@@ -2387,6 +2387,8 @@ namespace Demo.GroupData.Models
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "eCH-0039G1T1-1-0", IsNullable = true)]
     public partial class measureLawType
     {
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        private string idField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         private string ageCategoryField;
@@ -2433,6 +2435,12 @@ namespace Demo.GroupData.Models
         {
             this.masField = new List<maType>();
             this.mtsField = new List<mtType>();
+        }
+
+        public string Id
+        {
+            get { return this.idField; }
+            set { this.idField = value; }
         }
 
         public string ageCategory
@@ -2818,6 +2826,8 @@ namespace Demo.GroupData.Models
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "eCH-0039G1T1-1-0", IsNullable = true)]
     public partial class documentDataType
     {
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        private string idField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         private string keywordField;
@@ -2848,6 +2858,18 @@ namespace Demo.GroupData.Models
         public documentDataType()
         {
             this.addressField = new addressType();
+        }
+
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
 
         public string keyword
@@ -3167,6 +3189,8 @@ namespace Demo.GroupData.Models
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "eCH-0039G1T1-1-0", IsNullable = true)]
     public partial class relativeInfoType
     {
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        private string idField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         private mrMrsType titleField;
@@ -3241,6 +3265,12 @@ namespace Demo.GroupData.Models
             this.hometownField = new placeType();
             this.registeredResidenceField = new placeType();
             this.postcodePlaceField = new placeType();
+        }
+
+        public string Id
+        {
+            get { return this.idField; }
+            set { this.idField = value; }
         }
 
         public mrMrsType title
@@ -4310,6 +4340,8 @@ namespace Demo.GroupData.Models
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "eCH-0039G1T1-1-0", IsNullable = true)]
     public partial class clientInfoType
     {
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        private string idField;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         private mrMrsType titleField;
@@ -4383,6 +4415,12 @@ namespace Demo.GroupData.Models
             this.hometownField = new placeType();
             this.registeredResidenceField = new placeType();
             this.postcodePlaceField = new placeType();
+        }
+
+        public string Id
+        {
+            get { return this.idField; }
+            set { this.idField = value; }
         }
 
         public mrMrsType title
