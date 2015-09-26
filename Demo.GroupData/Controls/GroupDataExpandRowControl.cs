@@ -20,7 +20,7 @@ namespace Demo.GroupData.Controls
         {
             this.InitializeComponent();
         }
-        public GroupDataExpandRowControl(GroupItemModel data)
+        public GroupDataExpandRowControl(GroupItemModelBase data)
         {
             this.InitializeComponent();
             this.dataItem = data;
@@ -51,7 +51,7 @@ namespace Demo.GroupData.Controls
             return gridHeight;
         }
 
-        private GroupItemModel DataItem
+        private GroupItemModelBase DataItem
         {
             get
             {
@@ -62,7 +62,7 @@ namespace Demo.GroupData.Controls
                 this.dataItem = value;
             }
         }
-        private GroupItemModel dataItem;
+        private GroupItemModelBase dataItem;
 
         private int height;
         private bool showGroup = true;
@@ -106,7 +106,7 @@ namespace Demo.GroupData.Controls
         {
             if (this.gridView1.GetRow(e.RowHandle) != null)
             {
-                var item = (DataItemModel)this.gridView1.GetRow(e.RowHandle);
+                var item = (DataItemViewModelBase)this.gridView1.GetRow(e.RowHandle);
                 if (e.Column == this.gridView1.Columns["UseOlder"])
                 {
                     var value = e.Value is bool ? (bool?)e.Value : null;
@@ -133,7 +133,7 @@ namespace Demo.GroupData.Controls
             var row = this.gridView1.GetFocusedRow();
             if (row != null)
             {
-                var item = (DataItemModel)row;
+                var item = (DataItemViewModelBase)row;
                 item.Show = true;
                 this.gridView1.RefreshData();
             }
@@ -144,7 +144,7 @@ namespace Demo.GroupData.Controls
             var row = this.gridView1.GetFocusedRow();
             if (row != null)
             {
-                var item = (DataItemModel)row;
+                var item = (DataItemViewModelBase)row;
                 item.Show = false;
                 this.gridView1.RefreshData();
             }
@@ -154,13 +154,13 @@ namespace Demo.GroupData.Controls
             var dataRow = this.gridView1.GetRow(e.RowHandle);
             if (dataRow != null)
             {
-                var item = (DataItemModel)this.gridView1.GetRow(e.RowHandle);
+                var item = (DataItemViewModelBase)this.gridView1.GetRow(e.RowHandle);
                 if (item.Show)
                     e.RowHeight = 15 * item.Height;
                 else e.RowHeight = 15;
             }
             else e.RowHeight = 15;
-            
+
         }
 
         private void gridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
@@ -168,7 +168,7 @@ namespace Demo.GroupData.Controls
             if (e.Column.Name == "colExpand" && e.RowHandle >= 0)
             {
                 GridView gv = sender as GridView;
-                var item = (DataItemModel)gv.GetRow(e.RowHandle);
+                var item = (DataItemViewModelBase)gv.GetRow(e.RowHandle);
                 if (item.Show)
                 {
                     e.RepositoryItem = this.btnShrinkRow;

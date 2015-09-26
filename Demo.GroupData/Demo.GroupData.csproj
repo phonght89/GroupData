@@ -81,21 +81,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataItemModel.cs" />
+    <Compile Include="Models\ClientInfoDataItemViewModel.cs" />
+    <Compile Include="Models\ClientInfoGroupItemViewModel.cs" />
+    <Compile Include="Models\DataItemViewModelBase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupDataForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GroupDataForm.Designer.cs">
-      <DependentUpon>GroupDataForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\eCH-0039G1T1.cs" />
-    <Compile Include="Models\GroupItemModel.cs" />
+    <Compile Include="Models\GroupItemModelBase.cs" />
+    <Compile Include="Models\RelativeInfoGroupItemViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\GroupDataExpandRowControl.resx">
@@ -109,9 +106,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDemoGetData.resx">
       <DependentUpon>FormDemoGetData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GroupDataForm.resx">
-      <DependentUpon>GroupDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -153,12 +147,8 @@
     <Resource Include="Resources\up16.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="new.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="old.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="new.xml" />
+    <Content Include="old.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

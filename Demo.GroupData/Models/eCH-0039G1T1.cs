@@ -3267,6 +3267,22 @@ namespace Demo.GroupData.Models
             this.postcodePlaceField = new placeType();
         }
 
+        public override string ToString()
+        {
+            return string.Format("- {0}" +
+                                 "\n- First Name: {1}" +
+                                 "\n- Last Nsame: {2}" +
+                                 "\n- Supplement: {3}" +
+                                 "\n- Street: {4}" +
+                                 "\n- Post Code: {5}" +
+                                 "\n- Place: {6}" +
+                                 "\n- Canton: {7}" +
+                                 "\n- Telephone 1: {8}" +
+                                 "\n- Telephone 2: {9}" +
+                                 "\n- Mobile: {10}" +
+                                 "\n- Email: {11}", titleField, firstName, lastName, supplement, street, postcodePlace.postcode, postcodePlace.place, postcodePlace.canton, telephone1, telephone2, mobile, email);
+        }
+
         public string Id
         {
             get { return this.idField; }
@@ -6091,5 +6107,5 @@ namespace Demo.GroupData.Models
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("12")]
         Item12,
-    }    
+    }
 }

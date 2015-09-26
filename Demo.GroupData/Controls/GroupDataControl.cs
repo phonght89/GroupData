@@ -18,7 +18,7 @@ namespace Demo.GroupData.Controls
         {
             this.InitializeComponent();
         }
-        public GroupDataControl(GroupItemModel data)
+        public GroupDataControl(GroupItemModelBase data)
         {
             this.InitializeComponent();
             this.dataItem = data;
@@ -50,7 +50,7 @@ namespace Demo.GroupData.Controls
             return gridHeight;
         }
 
-        private GroupItemModel DataItem
+        private GroupItemModelBase DataItem
         {
             get
             {
@@ -61,7 +61,7 @@ namespace Demo.GroupData.Controls
                 this.dataItem = value;
             }
         }
-        private GroupItemModel dataItem;
+        private GroupItemModelBase dataItem;
 
         private int height;
         private bool showGroup = true;
@@ -105,7 +105,7 @@ namespace Demo.GroupData.Controls
         {
             if (this.gridView1.GetRow(e.RowHandle) != null)
             {
-                var item = (DataItemModel)this.gridView1.GetRow(e.RowHandle);
+                var item = (DataItemViewModelBase)this.gridView1.GetRow(e.RowHandle);
                 if (e.Column == this.gridView1.Columns["UseOlder"])
                 {
                     var value = e.Value is bool ? (bool?)e.Value : null;

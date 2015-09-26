@@ -1,27 +1,38 @@
 ﻿namespace Demo.GroupData.Models
 {
-    public class DataItemModel
+    public class DataItemViewModelBase
     {
-        public DataItemModel(string name, string dataOlder, string dataNew, bool userOlder, bool show = false)
+        public DataItemViewModelBase(string id, string name, bool show = false)
         {
+            this.id = id;
             this.name = name;
-            this.dataNew = dataNew;
-            this.dataOlder = dataOlder;
-            this.useFirst = userOlder;
-            this.useOlder = userOlder;
-            this.useNew = !userOlder;
-            this.Height = dataOlder.Split(new char[] { '\n' }).Length;
             this.Show = show;
         }
+        public DataItemViewModelBase(string id, string name, string dataOlder, string dataNew, bool? useFirst, bool show = false)
+            : this(id, name, show)
+        {
+            this.dataNew = dataNew;
+            this.dataOlder = dataOlder;
+            this.useFirst = useFirst;
+            this.useOlder = useFirst ?? false;
+            this.useNew = useFirst != null && !useOlder;
+            this.Height = dataOlder.Split(new char[] { '\n' }).Length;
+        }
+
+        public string Id
+        {
+            get { return this.id; }
+        }
+        private readonly string id;
 
         public bool IsChange
         {
             get
             {
-                return this.useFirst != this.UseOlder;
+                return this.useFirst != null && this.useFirst != this.useOlder;
             }
         }
-        private bool useFirst;
+        private bool? useFirst;
 
         public string NameColumn
         {

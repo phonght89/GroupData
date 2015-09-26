@@ -2,17 +2,17 @@
 {
     using System.ComponentModel;
 
-    public class GroupItemModel
+    public class GroupItemModelBase
     {
-        public GroupItemModel(string id, bool expandRow = false)
+        public GroupItemModelBase(string id, bool expandRow = false)
         {
             this.id = id;
             this.expandRow = expandRow;
             this.isChange = false;
-            this.Items = new BindingList<DataItemModel>();
+            this.Items = new BindingList<dynamic>();
         }
 
-        public BindingList<DataItemModel> Items { get; set; }
+        public BindingList<dynamic> Items { get; set; }
 
         public bool IsChange
         {
