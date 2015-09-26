@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="eCH-0039G1T1-1-0">
+  <clientInfo>
+    <Id>101</Id>
+    <title>Fräulein</title>
+    <lastName>Springer</lastName>
+    <firstName>Tom</firstName>
+    <supplement />
+    <street>Musterstrasse 123</street>
+    <postcodePlace>
+      <postcode>5600</postcode>
+      <place>Lenzburg</place>
+      <canton>AG</canton>
+    </postcodePlace>
+    <telephoneP />
+    <telephoneG />
+    <mobile />
+    <email />
+    <registeredResidence>
+      <postcode>5600</postcode>
+      <place>Lenzburg</place>
+      <canton>AG</canton>
+    </registeredResidence>
+    <address>Musterstrasse 123</address>
+    <sex>männlich</sex>
+    <maritalStatus>verheiratet</maritalStatus>
+    <confession>Evangelisch-Reformiert</confession>
+    <dateOfBirth>1976-09-01</dateOfBirth>
+    <nnss>756.1234.5678.97</nnss>
+    <hometown>
+      <postcode>3612</postcode>
+      <place>Steffisburg</place>
+      <canton>BE</canton>
+    </hometown>
+    <nationality>CH Schweiz</nationality>
+    <responsiblePerson />
+    <clientCase>
+      <subjectArea>Sozialhilfe</subjectArea>
+      <anamnesis>2013-07-11</anamnesis>
+      <responsibleCommunity>
+        <postcode>5600</postcode>
+        <place>Lenzburg</place>
+        <canton />
+      </responsibleCommunity>
+    </clientCase>
+  </clientInfo>
+  <relativeInfos>
+    <relativeInfo>
+      <Id>100</Id>
+      <title>Herr</title>
+      <lastName>Springer</lastName>
+      <firstName>Till</firstName>
+      <supplement />
+      <street>Musterstrasse 123</street>
+      <postcodePlace>
+        <postcode>5600</postcode>
+        <place>Lenzburg</place>
+        <canton>AG</canton>
+      </postcodePlace>
+      <telephone1 />
+      <telephone2 />
+      <mobile />
+      <email />
+      <dateOfBirth>2014-06-25</dateOfBirth>
+      <sex>männlich</sex>
+      <maritalStatus>ledig</maritalStatus>
+      <nnss />
+      <confession />
+      <relationship />
+      <registeredResidence>
+        <postcode>0</postcode>
+      </registeredResidence>
+      <address>Musterstrasse 123</address>
+      <hometown>
+        <postcode>3612</postcode>
+        <place>Steffisburg</place>
+        <canton>BE</canton>
+      </hometown>
+      <nationality>CH Schweiz</nationality>
+      <ue>-1</ue>
+      <inHousehold>-1</inHousehold>
+    </relativeInfo>
+    <relativeInfo>
+      <Id>101</Id>
+      <title>Frau</title>
+      <lastName>Springer</lastName>
+      <firstName>Rebecca</firstName>
+      <supplement />
+      <street>Musterstrasse 123</street>
+      <postcodePlace>
+        <postcode>5600</postcode>
+        <place>Lenzburg</place>
+        <canton>AG</canton>
+      </postcodePlace>
+      <telephone1 />
+      <telephone2 />
+      <mobile />
+      <email />
+      <dateOfBirth>1979-12-29</dateOfBirth>
+      <sex>weiblich</sex>
+      <maritalStatus>verheiratet</maritalStatus>
+      <nnss />
+      <confession />
+      <relationship>Ehemann/Ehefrau</relationship>
+      <registeredResidence>
+        <postcode>0</postcode>
+      </registeredResidence>
+      <address>Musterstrasse 123</address>
+      <hometown>
+        <postcode>0</postcode>
+        <place />
+        <canton />
+      </hometown>
+      <nationality>Deutschland2</nationality>
+      <ue>-1</ue>
+      <inHousehold>-1</inHousehold>
+    </relativeInfo>
+  </relativeInfos>
+  <documentDatas>
+    <documentData>
+      <Id>300</Id>
+      <keyword>RP-Anderung Köniz, Frau Känzig, Outlook-Schnittstelle Fehler, PM0007 36649</keyword>
+      <affect />
+      <date>2014-03-14</date>
+      <type>Telefonat</type>
+      <topic />
+      <documentObject>Sozialhilfe</documentObject>
+      <fileName />
+      <address>
+        <firstName />
+        <lastName />
+        <postcode>0</postcode>
+        <street />
+      </address>
+    </documentData>
+    <documentData>
+      <Id>301</Id>
+      <keyword>Test fs -&gt; officeatwork</keyword>
+      <affect />
+      <date>2013-08-06</date>
+      <type />
+      <topic />
+      <documentObject>Sozialhilfe</documentObject>
+      <fileName />
+      <address>
+        <firstName>Franz</firstName>
+        <lastName>Beispiel</lastName>
+        <postcode>5600</postcode>
+        <street>Hauptstrasse 99</street>
+      </address>
+    </documentData>
+    <documentData>
+      <Id>302</Id>
+      <keyword>WG: PM0002, Ticket 36291</keyword>
+      <affect />
+      <date>2013-08-08</date>
+      <type>Administration</type>
+      <topic />
+      <documentObject>Sozialhilfe</documentObject>
+      <fileName />
+      <address>
+        <firstName />
+        <lastName />
+        <postcode>0</postcode>
+        <street />
+      </address>
+    </documentData>
+  </documentDatas>
+  <measureLaws>
+    <measureLaw>
+      <Id>200</Id>
+      <ageCategory>Kinder</ageCategory>
+      <kindOfAction>Beispiel</kindOfAction>
+      <foundation>2015-09-26</foundation>
+      <courtDecision>2015-09-26</courtDecision>
+      <takeoverOn>2015-09-26</takeoverOn>
+      <takeoverBy />
+      <repeal>2015-09-26</repeal>
+      <repealReason />
+      <transferOn>2015-09-26</transferOn>
+      <transferTo />
+      <note />
+      <mts />
+      <mas />
+    </measureLaw>
+  </measureLaws>
+</contentType>

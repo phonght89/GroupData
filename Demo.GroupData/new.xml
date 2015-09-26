@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="eCH-0039G1T1-1-0">
+  <clientInfo>
+    <Id>101</Id>
+    <title>Frau</title>
+    <lastName>Muster</lastName>
+    <firstName>Mama</firstName>
+    <supplement />
+    <street>Weyermühlestrasse 19</street>
+    <postcodePlace>
+      <postcode>5600</postcode>
+      <place>Lenzburg 1</place>
+      <canton>AG</canton>
+    </postcodePlace>
+    <telephoneP />
+    <telephoneG />
+    <mobile />
+    <email />
+    <registeredResidence>
+      <postcode>5600</postcode>
+      <place>Lenzburg</place>
+      <canton>AG</canton>
+    </registeredResidence>
+    <address>Weyermühlestrasse 19</address>
+    <sex>weiblich</sex>
+    <maritalStatus>geschieden</maritalStatus>
+    <confession />
+    <dateOfBirth>1966-05-16</dateOfBirth>
+    <nnss>12312123123</nnss>
+    <hometown>
+      <postcode>6600</postcode>
+      <place>Locarno</place>
+      <canton>TI</canton>
+    </hometown>
+    <nationality>CH Schweiz</nationality>
+    <responsiblePerson />
+    <clientCase>
+      <subjectArea>Alimentehilfe</subjectArea>
+      <anamnesis>2005-05-12</anamnesis>
+      <responsibleCommunity>
+        <postcode>5600</postcode>
+        <place>Lenzburg</place>
+        <canton />
+      </responsibleCommunity>
+    </clientCase>
+  </clientInfo>
+  <relativeInfos>
+    <relativeInfo>
+      <Id>100</Id>
+      <title>Frau</title>
+      <lastName>Muster</lastName>
+      <firstName>Bibi</firstName>
+      <supplement />
+      <street>Weyermühlestrasse 19</street>
+      <postcodePlace>
+        <postcode>5600</postcode>
+        <place>Lenzburg 1</place>
+        <canton>AG</canton>
+      </postcodePlace>
+      <telephone1 />
+      <telephone2 />
+      <mobile />
+      <email />
+      <dateOfBirth>1988-01-01</dateOfBirth>
+      <sex>andere</sex>
+      <maritalStatus />
+      <nnss />
+      <confession>andere christliche</confession>
+      <relationship>Kind (eigenes inkl. Adoptivkind)</relationship>
+      <registeredResidence>
+        <postcode>0</postcode>
+      </registeredResidence>
+      <address>Weyermühlestrasse 19</address>
+      <hometown>
+        <postcode>0</postcode>
+        <place />
+        <canton />
+      </hometown>
+      <nationality />
+      <ue>0</ue>
+      <inHousehold>-1</inHousehold>
+    </relativeInfo>
+  </relativeInfos>
+  <documentDatas>
+    <documentData>
+      <Id>300</Id>
+      <keyword>te</keyword>
+      <affect />
+      <date>2006-06-12</date>
+      <type>Administration</type>
+      <topic />
+      <documentObject>Alimentehilfe</documentObject>
+      <fileName />
+      <address>
+        <firstName />
+        <lastName />
+        <postcode>0</postcode>
+        <street />
+      </address>
+    </documentData>
+    <documentData>
+      <Id>301</Id>
+      <keyword>AW: Einladung Vorstellung Redesign KLIB-Modul Asyl 22. August 2006  9.00 Uhr</keyword>
+      <affect />
+      <date>2006-08-23</date>
+      <type>Allgemeine Korrespondenz</type>
+      <topic />
+      <documentObject>Alimentehilfe</documentObject>
+      <fileName />
+      <address>
+        <firstName />
+        <lastName />
+        <postcode>0</postcode>
+        <street />
+      </address>
+    </documentData>
+  </documentDatas>
+  <measureLaws />
+</contentType>

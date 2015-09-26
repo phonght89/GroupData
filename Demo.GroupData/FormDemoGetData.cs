@@ -44,7 +44,7 @@ namespace Demo.GroupData
 
         private void FormDemoGetData_Load(object sender, EventArgs e)
         {
-            FileInfo olderfile = new FileInfo(Application.StartupPath + "\\" + "older.xml");
+            FileInfo olderfile = new FileInfo(Application.StartupPath + "\\" + "old.xml");
             FileInfo newfile = new FileInfo(Application.StartupPath + "\\" + "new.xml");
             contentType modelold = Deserializer<contentType>(olderfile);
             contentType modelnew = Deserializer<contentType>(newfile);
