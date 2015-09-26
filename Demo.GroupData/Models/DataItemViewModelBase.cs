@@ -16,9 +16,10 @@
             this.useFirst = useFirst;
             this.useOlder = useFirst ?? false;
             this.useNew = useFirst != null && !useOlder;
-            this.Height = dataOlder.Split(new char[] { '\n' }).Length;
+            var dataRowOlder = dataOlder.Split(new char[] { '\n' }).Length;
+            var dataRowNew = dataNew.Split(new char[] { '\n' }).Length;
+            this.Height = dataRowOlder >= dataRowNew ? dataRowOlder : dataRowNew;
         }
-
         public string Id
         {
             get { return this.id; }

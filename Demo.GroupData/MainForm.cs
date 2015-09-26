@@ -21,19 +21,21 @@ namespace Demo.GroupData
 
         private ClientInfoGroupItemViewModel clientInfoVm;
         private RelativeInfoGroupItemViewModel relativeInfoVm;
-        private void LoadData(){
+        private void LoadData()
+        {
             FileInfo olderfile = new FileInfo(Application.StartupPath + "\\" + "old.xml");
             FileInfo newfile = new FileInfo(Application.StartupPath + "\\" + "new.xml");
             contentType modelold = Deserializer<contentType>(olderfile);
             contentType modelnew = Deserializer<contentType>(newfile);
             clientInfoVm = new ClientInfoGroupItemViewModel(modelold.clientInfo,modelnew.clientInfo);
             relativeInfoVm = new RelativeInfoGroupItemViewModel(modelold.clientInfo.Id, modelold.relativeInfos, modelnew.relativeInfos);
+            var controlGroupExpandRow = new GroupDataExpandRowControl(relativeInfoVm);
+            controlGroupExpandRow.Dock = DockStyle.Top;
+            this.xtraScrollableControl1.Controls.Add(controlGroupExpandRow);
             var controlGroup = new GroupDataControl(clientInfoVm);
             controlGroup.Dock = DockStyle.Top;
             this.xtraScrollableControl1.Controls.Add(controlGroup);
-            var controlGroupExpandRow = new GroupDataExpandRowControl(clientInfoVm);
-            controlGroupExpandRow.Dock = DockStyle.Top;
-            this.xtraScrollableControl1.Controls.Add(controlGroupExpandRow);
+            
         }
 
         public static T Deserializer<T>(FileInfo fi)

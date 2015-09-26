@@ -54,7 +54,7 @@ namespace Demo.GroupData.Models
                         && string.Equals(k.lastName, relativeInfoItemOlder.lastName, StringComparison.CurrentCultureIgnoreCase));
                 var dataNew = relativeInfoItemNew != null ? relativeInfoItemNew.ToString() : string.Empty;
 
-                var itemViewModel = new DataItemViewModelBase(relativeInfoItemOlder.Id, numericalorder.ToString(), dataOlder, dataNew, true);
+                var itemViewModel = new DataItemViewModelBase(relativeInfoItemOlder.Id, numericalorder.ToString(), dataOlder, dataNew, true, numericalorder == 1);
                 this.Items.Add(itemViewModel);
             }
 
