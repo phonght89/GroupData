@@ -91,7 +91,7 @@ namespace Demo.GroupData.Models
             var dataOlder = propValueOlder != null ? propValueOlder.ToString() : string.Empty;
             var dataNew = propValueNew != null ? propValueNew.ToString() : string.Empty;
             var useFirst = !string.IsNullOrEmpty(dataOlder) ? true : !string.IsNullOrEmpty(dataNew) ? false : (bool?)null;
-            this.Items.Add(new DataItemViewModelBase(this.Id, propName, dataOlder, dataNew, useFirst));
+            this.Items.Add(new DataItemViewModelBase(this.Id, propName, dataOlder, dataNew, useFirst, clientInfoOlder, clientInfoNew));
         }
     }
 }

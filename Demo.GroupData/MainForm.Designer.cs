@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // xtraScrollableControl1
@@ -41,10 +42,20 @@
             this.xtraScrollableControl1.Size = new System.Drawing.Size(1082, 853);
             this.xtraScrollableControl1.TabIndex = 4;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(1221, 33);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1482, 853);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.xtraScrollableControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
@@ -57,6 +68,7 @@
         #endregion
 
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
 
     }
 }

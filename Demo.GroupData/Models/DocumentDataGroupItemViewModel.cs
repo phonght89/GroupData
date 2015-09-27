@@ -50,9 +50,10 @@ namespace Demo.GroupData.Models
                 numericalorder++;
                 var dataOlder = documentDataItemOlder.ToString();
                 var documentDataItemNew = this.documentDatasNew.FirstOrDefault(k => string.Equals(k.keyword, documentDataItemOlder.keyword, StringComparison.CurrentCultureIgnoreCase));
+                
                 var dataNew = documentDataItemNew != null ? documentDataItemNew.ToString() : string.Empty;
 
-                var itemViewModel = new DataItemViewModelBase(documentDataItemOlder.Id, numericalorder.ToString(), dataOlder, dataNew, true, numericalorder == 1);
+                var itemViewModel = new DataItemViewModelBase(documentDataItemOlder.Id, numericalorder.ToString(), dataOlder, dataNew, true, documentDataItemOlder, documentDataItemNew, numericalorder == 1);
                 this.Items.Add(itemViewModel);
             }
 
@@ -62,7 +63,7 @@ namespace Demo.GroupData.Models
                 {
                     numericalorder++;
                     var dataNew = documentDataItemNew.ToString();
-                    var itemViewModel = new DataItemViewModelBase(string.Empty, numericalorder.ToString(), string.Empty, dataNew, false);
+                    var itemViewModel = new DataItemViewModelBase(string.Empty, numericalorder.ToString(), string.Empty, dataNew, false, null, documentDataItemNew, numericalorder == 1);
                     this.Items.Add(itemViewModel);
                 }
             }

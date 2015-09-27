@@ -49,10 +49,10 @@ namespace Demo.GroupData.Models
             {
                 numericalorder++;
                 var dataOlder = measureLawItemOlder.ToString();
-                var documentDataItemNew = this.measureLawsNew.FirstOrDefault(k => string.Equals(k.ageCategory, measureLawItemOlder.ageCategory, StringComparison.CurrentCultureIgnoreCase));
-                var dataNew = documentDataItemNew != null ? documentDataItemNew.ToString() : string.Empty;
+                var measureLawItemNew = this.measureLawsNew.FirstOrDefault(k => string.Equals(k.ageCategory, measureLawItemOlder.ageCategory, StringComparison.CurrentCultureIgnoreCase));
+                var dataNew = measureLawItemNew != null ? measureLawItemNew.ToString() : string.Empty;
 
-                var itemViewModel = new DataItemViewModelBase(measureLawItemOlder.Id, numericalorder.ToString(), dataOlder, dataNew, true, numericalorder == 1);
+                var itemViewModel = new DataItemViewModelBase(measureLawItemOlder.Id, numericalorder.ToString(), dataOlder, dataNew, true, measureLawItemOlder, measureLawItemNew, numericalorder == 1);
                 this.Items.Add(itemViewModel);
             }
 
@@ -62,7 +62,7 @@ namespace Demo.GroupData.Models
                 {
                     numericalorder++;
                     var dataNew = measureLawItemNew.ToString();
-                    var itemViewModel = new DataItemViewModelBase(string.Empty, numericalorder.ToString(), string.Empty, dataNew, false);
+                    var itemViewModel = new DataItemViewModelBase(string.Empty, numericalorder.ToString(), string.Empty, dataNew, false, null, measureLawItemNew, numericalorder == 1);
                     this.Items.Add(itemViewModel);
                 }
             }

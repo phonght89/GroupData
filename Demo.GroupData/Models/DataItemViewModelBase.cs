@@ -4,15 +4,16 @@ namespace Demo.GroupData.Models
 {
     public class DataItemViewModelBase
     {
-        public DataItemViewModelBase(string id, string name, bool show = false)
+        public dynamic ModelOlder { get; set; }
+        public dynamic ModelNew { get; set; }
+
+        public DataItemViewModelBase(string id, string name, string dataOlder, string dataNew, bool? useFirst, dynamic modelOlder = null, dynamic modelNew = null, bool show = false)
         {
             this.id = id;
             this.name = name;
             this.Show = show;
-        }
-        public DataItemViewModelBase(string id, string name, string dataOlder, string dataNew, bool? useFirst, bool show = false)
-            : this(id, name, show)
-        {
+            this.ModelOlder = modelOlder;
+            this.ModelNew = modelNew;
             this.dataNew = dataNew;
             this.dataOlder = dataOlder;
             this.useFirst = useFirst;
@@ -21,7 +22,7 @@ namespace Demo.GroupData.Models
             var dataRowOlder = dataOlder.Split(new char[] { '\n' }).Length;
             var dataRowNew = dataNew.Split(new char[] { '\n' }).Length;
             this.Height = dataRowOlder >= dataRowNew ? dataRowOlder : dataRowNew;
-            if (!string.IsNullOrEmpty(dataNew) && !string.Equals(this.dataNew, this.dataOlder,StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(dataNew) && !string.Equals(this.dataNew, this.dataOlder, StringComparison.InvariantCultureIgnoreCase))
             {
                 this.useFirst = false;
                 this.useOlder = false;

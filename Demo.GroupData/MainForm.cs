@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace Demo.GroupData
 {
@@ -90,5 +91,78 @@ namespace Demo.GroupData
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var contenType = new contentType();
+            this.GetRelativeInfo(contenType);
+            this.GetDocumentData(contenType);
+            this.GetMeasureLaw(contenType);
+        }
+
+        private void GetDocumentData(contentType model)
+        {
+            foreach (var item in this.documentDataVm.Items.Cast<DataItemViewModelBase>())
+            {
+                if (!string.IsNullOrWhiteSpace(item.Id))
+                {
+                    if (item.UseOlder || !item.UseNew)
+                    {
+                        model.documentDatas.Add((documentDataType)item.ModelOlder);
+                    }
+                    else
+                    {
+                        model.documentDatas.Add((documentDataType)item.ModelNew);
+                    }
+                }
+                else
+                {
+                    model.documentDatas.Add((documentDataType)item.ModelNew);
+                }
+            }
+        }
+
+        private void GetRelativeInfo(contentType model)
+        {
+            foreach (var item in this.relativeInfoVm.Items.Cast<DataItemViewModelBase>())
+            {
+                if (!string.IsNullOrWhiteSpace(item.Id))
+                {
+                    if (item.UseOlder || !item.UseNew)
+                    {
+                        model.relativeInfos.Add((relativeInfoType)item.ModelOlder);
+                    }
+                    else
+                    {
+                        model.relativeInfos.Add((relativeInfoType)item.ModelNew);
+                    }
+                }
+                else
+                {
+                    model.relativeInfos.Add((relativeInfoType)item.ModelNew);
+                }
+            }
+        }
+
+        private void GetMeasureLaw(contentType model)
+        {
+            foreach (var item in this.measureLawVm.Items.Cast<DataItemViewModelBase>())
+            {
+                if (!string.IsNullOrWhiteSpace(item.Id))
+                {
+                    if (item.UseOlder || !item.UseNew)
+                    {
+                        model.measureLaws.Add((measureLawType)item.ModelOlder);
+                    }
+                    else
+                    {
+                        model.measureLaws.Add((measureLawType)item.ModelNew);
+                    }
+                }
+                else
+                {
+                    model.measureLaws.Add((measureLawType)item.ModelNew);
+                }
+            }
+        }
     }
 }
