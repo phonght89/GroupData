@@ -34,16 +34,16 @@ namespace Demo.GroupData
             documentDataVm = new DocumentDataGroupItemViewModel(modelold.clientInfo.Id, modelold.documentDatas, modelnew.documentDatas);
             measureLawVm = new MeasureLawGroupItemViewModel(modelold.clientInfo.Id, modelold.measureLaws, modelnew.measureLaws);
 
-            var measureLawGroup = new GroupDataExpandRowControl(measureLawVm);
+            var measureLawGroup = new GroupDataExpandRowControl(measureLawVm, "Massnahmen");
             measureLawGroup.Dock = DockStyle.Top;
             this.xtraScrollableControl1.Controls.Add(measureLawGroup);
 
-            var documentDataGroup = new GroupDataExpandRowControl(documentDataVm);
+            var documentDataGroup = new GroupDataExpandRowControl(documentDataVm,"Dokumente");
             documentDataGroup.Dock = DockStyle.Top;
             this.xtraScrollableControl1.Controls.Add(documentDataGroup);
 
-            var relativeInfoGroup = new GroupDataExpandRowControl(relativeInfoVm);
-            relativeInfoGroup.Dock = DockStyle.Top;
+            var relativeInfoGroup = new GroupDataExpandRowControl(relativeInfoVm, "Angehörige");
+            relativeInfoGroup.Dock = DockStyle.Top;     
             this.xtraScrollableControl1.Controls.Add(relativeInfoGroup);
 
             var clientInfoGroup = new GroupDataControl(clientInfoVm);
@@ -75,11 +75,11 @@ namespace Demo.GroupData
             }
         }
 
-        private void CreateControlWithData(GroupItemModelBase dataModel)
+        private void CreateControlWithData(GroupItemModelBase dataModel,string headerText)
         {
             if (dataModel.ExpandRow)
             {
-                var controlGroup = new GroupDataExpandRowControl(dataModel);
+                var controlGroup = new GroupDataExpandRowControl(dataModel, headerText);
                 controlGroup.Dock = DockStyle.Top;
                 this.xtraScrollableControl1.Controls.Add(controlGroup);
             }

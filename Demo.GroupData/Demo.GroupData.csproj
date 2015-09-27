@@ -149,8 +149,12 @@
     <Resource Include="Resources\up16.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="new.xml" />
-    <Content Include="old.xml" />
+    <Content Include="new.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="old.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

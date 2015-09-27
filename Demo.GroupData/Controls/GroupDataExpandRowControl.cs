@@ -21,14 +21,17 @@ namespace Demo.GroupData.Controls
         {
             this.InitializeComponent();
         }
-        public GroupDataExpandRowControl(GroupItemModelBase data)
+        public GroupDataExpandRowControl(GroupItemModelBase data,string headerText)
         {
             this.InitializeComponent();
             this.dataItem = data;
+            this.headerText = headerText;
             this.LoadData();
         }
         private void LoadData()
         {
+            labelControl1.Text = headerText;
+            labelControl2.Text = headerText;
             this.gridControl1.DataSource = this.dataItem.Items;
             this.gridControl1.Refresh();
         }
@@ -64,6 +67,7 @@ namespace Demo.GroupData.Controls
             }
         }
         private GroupItemModelBase dataItem;
+        private string headerText;
 
         private int height;
         private bool showGroup = true;
@@ -223,3 +227,4 @@ namespace Demo.GroupData.Controls
         }
     }
 }
+
