@@ -84,16 +84,15 @@ namespace Demo.GroupData
                 this.xtraScrollableControl1.Controls.Add(controlGroup);
             }
             else
-            {
-                var controlGroup = new GroupDataControl(dataModel);
+            {var controlGroup = new GroupDataControl(dataModel);
                 controlGroup.Dock = DockStyle.Top;
                 this.xtraScrollableControl1.Controls.Add(controlGroup);
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             var contenType = new contentType();
+            contenType.clientInfo = this.clientInfoVm.GetDataChange();
             this.GetRelativeInfo(contenType);
             this.GetDocumentData(contenType);
             this.GetMeasureLaw(contenType);
