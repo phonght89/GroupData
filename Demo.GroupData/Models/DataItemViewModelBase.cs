@@ -1,4 +1,6 @@
-﻿namespace Demo.GroupData.Models
+﻿using System;
+
+namespace Demo.GroupData.Models
 {
     public class DataItemViewModelBase
     {
@@ -19,6 +21,18 @@
             var dataRowOlder = dataOlder.Split(new char[] { '\n' }).Length;
             var dataRowNew = dataNew.Split(new char[] { '\n' }).Length;
             this.Height = dataRowOlder >= dataRowNew ? dataRowOlder : dataRowNew;
+            if (!string.IsNullOrEmpty(dataNew) && !string.Equals(this.dataNew, this.dataOlder,StringComparison.InvariantCultureIgnoreCase))
+            {
+                this.useFirst = false;
+                this.useOlder = false;
+                this.useNew = true;
+            }
+            else
+            {
+                this.useFirst = true;
+                this.useOlder = true;
+                this.useNew = false;
+            }
         }
         public string Id
         {
@@ -59,14 +73,15 @@
             set
             {
                 this.useOlder = value;
-                if (value)
-                {
-                    this.useNew = false;
-                }
-                else
-                {
-                    this.useNew = !string.IsNullOrWhiteSpace(dataNew);
-                }
+                this.useNew = !value;
+                //if (value)
+                //{
+                //    this.useNew = false;
+                //}
+                //else
+                //{
+                //    this.useNew = !string.IsNullOrWhiteSpace(dataNew);
+                //}
             }
         }
         private bool useOlder;
@@ -77,14 +92,15 @@
             set
             {
                 this.useNew = value;
-                if (value)
-                {
-                    this.useOlder = false;
-                }
-                else
-                {
-                    this.useOlder = !string.IsNullOrWhiteSpace(dataOlder);
-                }
+                this.useOlder = !value;
+                //if (value)
+                //{
+                //    this.useOlder = false;
+                //}
+                //else
+                //{
+                //    this.useOlder = !string.IsNullOrWhiteSpace(dataOlder);
+                //}
             }
         }
         private bool useNew;

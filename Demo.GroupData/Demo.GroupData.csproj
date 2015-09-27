@@ -57,17 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\GroupDataExpandRowControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\GroupDataExpandRowControl.Designer.cs">
-      <DependentUpon>GroupDataExpandRowControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\GroupDataControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\GroupDataControl.Designer.cs">
       <DependentUpon>GroupDataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GroupDataExpandRowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupDataExpandRowControl.Designer.cs">
+      <DependentUpon>GroupDataExpandRowControl.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDemoGetData.cs">
       <SubType>Form</SubType>
@@ -97,11 +97,11 @@
     <Compile Include="Models\RelativeInfoGroupItemViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\GroupDataExpandRowControl.resx">
-      <DependentUpon>GroupDataExpandRowControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\GroupDataControl.resx">
       <DependentUpon>GroupDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GroupDataExpandRowControl.resx">
+      <DependentUpon>GroupDataExpandRowControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

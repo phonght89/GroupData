@@ -18,6 +18,7 @@ namespace Demo.GroupData.Controls
         public GroupDataControl()
         {
             this.InitializeComponent();
+            //this.gridView1.row
         }
         public GroupDataControl(GroupItemModelBase data)
         {
@@ -100,7 +101,8 @@ namespace Demo.GroupData.Controls
                 if (useOlder)
                 {
                     if (!string.IsNullOrWhiteSpace(item.DataOlder))
-                        item.UseOlder = true;}
+                        item.UseOlder = true;
+                }
                 else
                 {
                     if (!string.IsNullOrWhiteSpace(item.DataNew))
@@ -120,32 +122,38 @@ namespace Demo.GroupData.Controls
                     var value = e.Value is bool ? (bool?)e.Value : null;
                     if (value != null)
                     {
-                        if (value.Value)
-                        {
-                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], false);
-                        }
-                        else
-                        {
-                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"],
-                                !string.IsNullOrWhiteSpace(item.DataNew));
-                        }
+                        item.UseOlder = value.Value;
+                        this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !value.Value);
+                        //if (value.Value)
+                        //{
+                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], false);
+                        //}
+                        //else
+                        //{
+                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"],
+                        //        !string.IsNullOrWhiteSpace(item.DataNew));
+                        //}
                     }
                 }
                 if (e.Column == this.gridView1.Columns["UseNew"])
                 {
                     var value = e.Value is bool ? (bool?)e.Value : null;
+
                     if (value != null)
                     {
-                        if (value.Value)
-                        {
-                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], false);
-                        }
-                        else
-                        {
-                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"],
-                                !string.IsNullOrWhiteSpace(item.DataOlder));
-                        }
-                    }}
+                        item.UseNew = value.Value;
+                        this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !value.Value);
+                        //if (value.Value)
+                        //{
+                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], false);
+                        //}
+                        //else
+                        //{
+                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"],
+                        //        !string.IsNullOrWhiteSpace(item.DataOlder));
+                        //}
+                    }
+                }
             }
         }
 

@@ -127,14 +127,15 @@ namespace Demo.GroupData.Controls
                     if (value != null)
                     {
                         item.UseOlder = value.Value;
-                        if (value.Value)
-                        {
-                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], false);
-                        }
-                        else
-                        {
-                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !string.IsNullOrWhiteSpace(item.DataNew));
-                        }
+                        this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !value.Value);
+                        //if (value.Value)
+                        //{
+                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], false);
+                        //}
+                        //else
+                        //{
+                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !string.IsNullOrWhiteSpace(item.DataNew));
+                        //}
                     }
                 }
                 if (e.Column == this.gridView1.Columns["UseNew"])
@@ -143,15 +144,15 @@ namespace Demo.GroupData.Controls
                     if (value != null)
                     {
                         item.UseNew = value.Value;
-
-                        if (value.Value)
-                        {
-                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], false);
-                        }
-                        else
-                        {
-                            this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !string.IsNullOrWhiteSpace(item.DataOlder));
-                        }
+                        this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !value.Value);
+                        //if (value.Value)
+                        //{
+                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], false);
+                        //}
+                        //else
+                        //{
+                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !string.IsNullOrWhiteSpace(item.DataOlder));
+                        //}
                     }
                 }
             }

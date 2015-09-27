@@ -25,8 +25,7 @@ namespace Demo.GroupData
         private MeasureLawGroupItemViewModel measureLawVm;
         private void LoadData()
         {
-            FileInfo olderfile = new FileInfo(Application.StartupPath + "\\" + "old.xml");
-            FileInfo newfile = new FileInfo(Application.StartupPath + "\\" + "new.xml");
+            FileInfo olderfile = new FileInfo(Application.StartupPath + "\\" + "old.xml");FileInfo newfile = new FileInfo(Application.StartupPath + "\\" + "new.xml");
             contentType modelold = Deserializer<contentType>(olderfile);
             contentType modelnew = Deserializer<contentType>(newfile);
             clientInfoVm = new ClientInfoGroupItemViewModel(modelold.clientInfo,modelnew.clientInfo);
