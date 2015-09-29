@@ -30,6 +30,7 @@ namespace Demo.GroupData.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupDataControl));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panel_dataNew = new System.Windows.Forms.Panel();
@@ -40,14 +41,14 @@ namespace Demo.GroupData.Controls
             this.check_all_older_group = new DevExpress.XtraEditors.CheckEdit();
             this.panelExpand = new System.Windows.Forms.Panel();
             this.btExpand = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.panel_dataOlder = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDataOlder = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rtItemGrid = new DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit();
+            this.colDataOlder = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUseOlder = new DevExpress.XtraGrid.Columns.GridColumn();
             this.checkItemGrid = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colUseNew = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -85,6 +86,7 @@ namespace Demo.GroupData.Controls
             // 
             // panel_dataNew
             // 
+            this.panel_dataNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_dataNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_dataNew.Controls.Add(this.labelControl2);
             this.panel_dataNew.Location = new System.Drawing.Point(699, -1);
@@ -99,12 +101,13 @@ namespace Demo.GroupData.Controls
             this.labelControl2.Location = new System.Drawing.Point(167, 14);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 16);
+            this.labelControl2.Size = new System.Drawing.Size(40, 13);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Klient-/n";
             // 
             // panel_checkNew
             // 
+            this.panel_checkNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_checkNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_checkNew.Controls.Add(this.check_all_new_group);
             this.panel_checkNew.Location = new System.Drawing.Point(599, -1);
@@ -120,12 +123,13 @@ namespace Demo.GroupData.Controls
             this.check_all_new_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_new_group.Name = "check_all_new_group";
             this.check_all_new_group.Properties.Caption = "Alle";
-            this.check_all_new_group.Size = new System.Drawing.Size(55, 20);
+            this.check_all_new_group.Size = new System.Drawing.Size(55, 19);
             this.check_all_new_group.TabIndex = 1;
             this.check_all_new_group.CheckStateChanged += new System.EventHandler(this.check_all_new_group1_CheckStateChanged);
             // 
             // panel_checkOlder
             // 
+            this.panel_checkOlder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_checkOlder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_checkOlder.Controls.Add(this.check_all_older_group);
             this.panel_checkOlder.Location = new System.Drawing.Point(499, -1);
@@ -142,12 +146,13 @@ namespace Demo.GroupData.Controls
             this.check_all_older_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_older_group.Name = "check_all_older_group";
             this.check_all_older_group.Properties.Caption = "Alle";
-            this.check_all_older_group.Size = new System.Drawing.Size(52, 20);
+            this.check_all_older_group.Size = new System.Drawing.Size(52, 19);
             this.check_all_older_group.TabIndex = 0;
             this.check_all_older_group.CheckedChanged += new System.EventHandler(this.check_all_older_group1_CheckedChanged);
             // 
             // panelExpand
             // 
+            this.panelExpand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelExpand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelExpand.Controls.Add(this.btExpand);
             this.panelExpand.Location = new System.Drawing.Point(-1, -1);
@@ -159,7 +164,9 @@ namespace Demo.GroupData.Controls
             // 
             // btExpand
             // 
+            this.btExpand.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btExpand.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btExpand.Appearance.Options.UseBackColor = true;
             this.btExpand.Appearance.Options.UseForeColor = true;
             this.btExpand.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btExpand.ImageIndex = 0;
@@ -185,6 +192,7 @@ namespace Demo.GroupData.Controls
             // 
             // panel_dataOlder
             // 
+            this.panel_dataOlder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_dataOlder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_dataOlder.Controls.Add(this.labelControl1);
             this.panel_dataOlder.Location = new System.Drawing.Point(129, -1);
@@ -199,7 +207,7 @@ namespace Demo.GroupData.Controls
             this.labelControl1.Location = new System.Drawing.Point(163, 13);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 16);
+            this.labelControl1.Size = new System.Drawing.Size(40, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Klient-/n";
             // 
@@ -250,6 +258,11 @@ namespace Demo.GroupData.Controls
             this.colName.VisibleIndex = 0;
             this.colName.Width = 130;
             // 
+            // rtItemGrid
+            // 
+            this.rtItemGrid.Name = "rtItemGrid";
+            this.rtItemGrid.ShowCaretInReadOnly = false;
+            // 
             // colDataOlder
             // 
             this.colDataOlder.Caption = "DataOlder";
@@ -262,11 +275,6 @@ namespace Demo.GroupData.Controls
             this.colDataOlder.Visible = true;
             this.colDataOlder.VisibleIndex = 1;
             this.colDataOlder.Width = 370;
-            // 
-            // rtItemGrid
-            // 
-            this.rtItemGrid.Name = "rtItemGrid";
-            this.rtItemGrid.ShowCaretInReadOnly = false;
             // 
             // colUseOlder
             // 

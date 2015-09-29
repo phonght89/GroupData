@@ -32,8 +32,8 @@ namespace Demo.GroupData.Controls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupDataExpandRowControl));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panel_dataNew = new System.Windows.Forms.Panel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -93,6 +93,7 @@ namespace Demo.GroupData.Controls
             // 
             // panel_dataNew
             // 
+            this.panel_dataNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_dataNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_dataNew.Controls.Add(this.labelControl2);
             this.panel_dataNew.Location = new System.Drawing.Point(699, -1);
@@ -107,12 +108,13 @@ namespace Demo.GroupData.Controls
             this.labelControl2.Location = new System.Drawing.Point(167, 14);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 16);
+            this.labelControl2.Size = new System.Drawing.Size(40, 13);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Klient-/n";
             // 
             // panel_checkNew
             // 
+            this.panel_checkNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_checkNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_checkNew.Controls.Add(this.check_all_new_group);
             this.panel_checkNew.Location = new System.Drawing.Point(599, -1);
@@ -128,12 +130,13 @@ namespace Demo.GroupData.Controls
             this.check_all_new_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_new_group.Name = "check_all_new_group";
             this.check_all_new_group.Properties.Caption = "Alle";
-            this.check_all_new_group.Size = new System.Drawing.Size(55, 20);
+            this.check_all_new_group.Size = new System.Drawing.Size(55, 19);
             this.check_all_new_group.TabIndex = 1;
             this.check_all_new_group.CheckStateChanged += new System.EventHandler(this.check_all_new_group1_CheckStateChanged);
             // 
             // panel_checkOlder
             // 
+            this.panel_checkOlder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_checkOlder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_checkOlder.Controls.Add(this.check_all_older_group);
             this.panel_checkOlder.Location = new System.Drawing.Point(499, -1);
@@ -150,12 +153,13 @@ namespace Demo.GroupData.Controls
             this.check_all_older_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_older_group.Name = "check_all_older_group";
             this.check_all_older_group.Properties.Caption = "Alle";
-            this.check_all_older_group.Size = new System.Drawing.Size(52, 20);
+            this.check_all_older_group.Size = new System.Drawing.Size(52, 19);
             this.check_all_older_group.TabIndex = 0;
             this.check_all_older_group.CheckedChanged += new System.EventHandler(this.check_all_older_group1_CheckedChanged);
             // 
             // panelExpand
             // 
+            this.panelExpand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelExpand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelExpand.Controls.Add(this.btExpand);
             this.panelExpand.Location = new System.Drawing.Point(-1, -1);
@@ -167,7 +171,9 @@ namespace Demo.GroupData.Controls
             // 
             // btExpand
             // 
+            this.btExpand.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btExpand.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btExpand.Appearance.Options.UseBackColor = true;
             this.btExpand.Appearance.Options.UseForeColor = true;
             this.btExpand.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btExpand.ImageIndex = 0;
@@ -193,6 +199,7 @@ namespace Demo.GroupData.Controls
             // 
             // panel_dataOlder
             // 
+            this.panel_dataOlder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_dataOlder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_dataOlder.Controls.Add(this.labelControl1);
             this.panel_dataOlder.Location = new System.Drawing.Point(129, -1);
@@ -207,7 +214,7 @@ namespace Demo.GroupData.Controls
             this.labelControl1.Location = new System.Drawing.Point(163, 13);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 16);
+            this.labelControl1.Size = new System.Drawing.Size(40, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Klient-/n";
             // 
@@ -337,7 +344,7 @@ namespace Demo.GroupData.Controls
             // 
             this.btnExpandRow.AutoHeight = false;
             this.btnExpandRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.down16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.down16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.btnExpandRow.Name = "btnExpandRow";
             this.btnExpandRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnExpandRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnExpandRow_ButtonClick);
@@ -346,7 +353,7 @@ namespace Demo.GroupData.Controls
             // 
             this.btnShrinkRow.AutoHeight = false;
             this.btnShrinkRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.up16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.up16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
             this.btnShrinkRow.Name = "btnShrinkRow";
             this.btnShrinkRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnShrinkRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnShrinkRow_ButtonClick);
@@ -358,6 +365,7 @@ namespace Demo.GroupData.Controls
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelHeader);
             this.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimumSize = new System.Drawing.Size(0, 47);
             this.Name = "GroupDataExpandRowControl";
             this.Size = new System.Drawing.Size(1070, 304);
             this.panelHeader.ResumeLayout(false);

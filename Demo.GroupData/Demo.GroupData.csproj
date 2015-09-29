@@ -83,12 +83,6 @@
     <Compile Include="FormDemoGetData.Designer.cs">
       <DependentUpon>FormDemoGetData.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmImportWizard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmImportWizard.Designer.cs">
-      <DependentUpon>FrmImportWizard.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmWizard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDemoGetData.resx">
       <DependentUpon>FormDemoGetData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWizard.resx">
+      <DependentUpon>frmWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

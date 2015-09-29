@@ -42,8 +42,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.PChooseMap = new DevExpress.XtraWizard.WizardPage();
-            this.PFinish = new DevExpress.XtraWizard.WizardPage();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.PFinish = new DevExpress.XtraWizard.WizardPage();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
             this.PChoosePath.SuspendLayout();
@@ -72,7 +72,7 @@
             this.PChooseClient,
             this.PChooseMap,
             this.PFinish});
-            this.wizardControl1.Size = new System.Drawing.Size(941, 535);
+            this.wizardControl1.Size = new System.Drawing.Size(1140, 535);
             this.wizardControl1.Text = "KLIB-Import";
             this.wizardControl1.WizardStyle = DevExpress.XtraWizard.WizardStyle.WizardAero;
             this.wizardControl1.SelectedPageChanged += new DevExpress.XtraWizard.WizardPageChangedEventHandler(this.wizardControl1_SelectedPageChanged);
@@ -87,7 +87,7 @@
             this.PChoosePath.Controls.Add(this.labelControl1);
             this.PChoosePath.Controls.Add(this.textEdit2);
             this.PChoosePath.Name = "PChoosePath";
-            this.PChoosePath.Size = new System.Drawing.Size(881, 373);
+            this.PChoosePath.Size = new System.Drawing.Size(1080, 373);
             this.PChoosePath.Text = "Please choose a file to import";
             // 
             // pictureBox1
@@ -137,7 +137,7 @@
             this.PChooseClient.Controls.Add(this.labelControl3);
             this.PChooseClient.Controls.Add(this.comboBoxEdit1);
             this.PChooseClient.Name = "PChooseClient";
-            this.PChooseClient.Size = new System.Drawing.Size(881, 373);
+            this.PChooseClient.Size = new System.Drawing.Size(1080, 373);
             this.PChooseClient.Text = "Please choose desired client and case";
             // 
             // checkEdit1
@@ -186,28 +186,32 @@
             // 
             this.PChooseMap.Controls.Add(this.xtraScrollableControl1);
             this.PChooseMap.Name = "PChooseMap";
-            this.PChooseMap.Size = new System.Drawing.Size(881, 373);
+            this.PChooseMap.Size = new System.Drawing.Size(1080, 373);
             this.PChooseMap.Text = "Mapping entities";
+            // 
+            // xtraScrollableControl1
+            // 
+            this.xtraScrollableControl1.Appearance.BackColor = System.Drawing.Color.White;
+            this.xtraScrollableControl1.Appearance.Options.UseBackColor = true;
+            this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraScrollableControl1.MaximumSize = new System.Drawing.Size(1082, 0);
+            this.xtraScrollableControl1.MinimumSize = new System.Drawing.Size(1082, 0);
+            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1082, 373);
+            this.xtraScrollableControl1.TabIndex = 0;
             // 
             // PFinish
             // 
             this.PFinish.Name = "PFinish";
-            this.PFinish.Size = new System.Drawing.Size(881, 373);
+            this.PFinish.Size = new System.Drawing.Size(1080, 373);
             this.PFinish.Text = "Complete maping";
-            // 
-            // xtraScrollableControl1
-            // 
-            this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
-            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(881, 373);
-            this.xtraScrollableControl1.TabIndex = 0;
             // 
             // frmWizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 535);
+            this.ClientSize = new System.Drawing.Size(1140, 535);
             this.Controls.Add(this.wizardControl1);
             this.Name = "frmWizard";
             this.Text = "frmWizard";
