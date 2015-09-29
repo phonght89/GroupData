@@ -51,7 +51,7 @@ namespace Demo.GroupData.Controls
         private int GetInvisibleRowsHeight()
         {
             GridViewInfo viewInfo = (GridViewInfo)this.gridView1.GetViewInfo();
-            int gridHeight = viewInfo.CalcRealViewHeight(new Rectangle(0, 0, int.MaxValue, int.MaxValue));
+            int gridHeight = viewInfo.CalcRealViewHeight(new Rectangle(0, 0, this.ClientSize.Width, this.ClientSize.Width));
             return gridHeight;
         }
 
@@ -77,6 +77,7 @@ namespace Demo.GroupData.Controls
             this.showGroup = !this.showGroup;
             if (this.showGroup)
             {
+                ReSizeGridByData();
                 this.Height = this.height;
                 this.btExpand.ImageIndex = 0;
             }
