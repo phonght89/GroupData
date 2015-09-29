@@ -124,6 +124,7 @@ namespace Demo.GroupData.Controls
                     {
                         item.UseOlder = value.Value;
                         this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !value.Value);
+                        //this.gridView1.SelectRow(e.RowHandle);
                         //if (value.Value)
                         //{
                         //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], false);
@@ -143,6 +144,7 @@ namespace Demo.GroupData.Controls
                     {
                         item.UseNew = value.Value;
                         this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !value.Value);
+                        //this.gridView1.SelectRow(e.RowHandle);
                         //if (value.Value)
                         //{
                         //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], false);

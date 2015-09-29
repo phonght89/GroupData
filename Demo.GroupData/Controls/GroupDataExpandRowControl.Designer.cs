@@ -32,8 +32,8 @@ namespace Demo.GroupData.Controls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupDataExpandRowControl));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panel_dataNew = new System.Windows.Forms.Panel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -108,7 +108,7 @@ namespace Demo.GroupData.Controls
             this.labelControl2.Location = new System.Drawing.Point(167, 14);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(40, 13);
+            this.labelControl2.Size = new System.Drawing.Size(48, 16);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Klient-/n";
             // 
@@ -130,7 +130,7 @@ namespace Demo.GroupData.Controls
             this.check_all_new_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_new_group.Name = "check_all_new_group";
             this.check_all_new_group.Properties.Caption = "Alle";
-            this.check_all_new_group.Size = new System.Drawing.Size(55, 19);
+            this.check_all_new_group.Size = new System.Drawing.Size(55, 20);
             this.check_all_new_group.TabIndex = 1;
             this.check_all_new_group.CheckStateChanged += new System.EventHandler(this.check_all_new_group1_CheckStateChanged);
             // 
@@ -153,7 +153,7 @@ namespace Demo.GroupData.Controls
             this.check_all_older_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_older_group.Name = "check_all_older_group";
             this.check_all_older_group.Properties.Caption = "Alle";
-            this.check_all_older_group.Size = new System.Drawing.Size(52, 19);
+            this.check_all_older_group.Size = new System.Drawing.Size(52, 20);
             this.check_all_older_group.TabIndex = 0;
             this.check_all_older_group.CheckedChanged += new System.EventHandler(this.check_all_older_group1_CheckedChanged);
             // 
@@ -214,7 +214,7 @@ namespace Demo.GroupData.Controls
             this.labelControl1.Location = new System.Drawing.Point(163, 13);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(40, 13);
+            this.labelControl1.Size = new System.Drawing.Size(48, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Klient-/n";
             // 
@@ -247,11 +247,12 @@ namespace Demo.GroupData.Controls
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowColumnHeaders = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);
-            this.gridView1.CalcRowHeight += new DevExpress.XtraGrid.Views.Grid.RowHeightEventHandler(this.gridView1_CalcRowHeight);
+            //this.gridView1.CalcRowHeight += new DevExpress.XtraGrid.Views.Grid.RowHeightEventHandler(this.gridView1_CalcRowHeight);
             this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChanged);
@@ -282,7 +283,7 @@ namespace Demo.GroupData.Controls
             // 
             this.colDataOlder.Caption = "DataOlder";
             this.colDataOlder.ColumnEdit = this.rtItemGrid;
-            this.colDataOlder.FieldName = "DataOlder";
+            this.colDataOlder.FieldName = "DataColumnOlder";
             this.colDataOlder.MaxWidth = 370;
             this.colDataOlder.MinWidth = 370;
             this.colDataOlder.Name = "colDataOlder";
@@ -331,7 +332,7 @@ namespace Demo.GroupData.Controls
             // 
             this.colDataNew.Caption = "DataNew";
             this.colDataNew.ColumnEdit = this.rtItemGrid;
-            this.colDataNew.FieldName = "DataNew";
+            this.colDataNew.FieldName = "DataColumnNew";
             this.colDataNew.MaxWidth = 368;
             this.colDataNew.MinWidth = 368;
             this.colDataNew.Name = "colDataNew";
@@ -344,7 +345,7 @@ namespace Demo.GroupData.Controls
             // 
             this.btnExpandRow.AutoHeight = false;
             this.btnExpandRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.down16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.down16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.btnExpandRow.Name = "btnExpandRow";
             this.btnExpandRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnExpandRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnExpandRow_ButtonClick);
@@ -353,7 +354,7 @@ namespace Demo.GroupData.Controls
             // 
             this.btnShrinkRow.AutoHeight = false;
             this.btnShrinkRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.up16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.up16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.btnShrinkRow.Name = "btnShrinkRow";
             this.btnShrinkRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnShrinkRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnShrinkRow_ButtonClick);

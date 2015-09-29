@@ -15,13 +15,12 @@ namespace Demo.GroupData.Models
             this.ModelOlder = modelOlder;
             this.ModelNew = modelNew;
             this.dataNew = dataNew;
+            this.dataShortNew = GetDataShort(dataNew);
             this.dataOlder = dataOlder;
+            this.dataShortOlder = GetDataShort(dataOlder);
             this.useFirst = useFirst;
             this.useOlder = useFirst ?? false;
             this.useNew = useFirst != null && !useOlder;
-            var dataRowOlder = dataOlder.Split(new char[] { '\n' }).Length;
-            var dataRowNew = dataNew.Split(new char[] { '\n' }).Length;
-            this.Height = dataRowOlder >= dataRowNew ? dataRowOlder : dataRowNew;
             if (!string.IsNullOrEmpty(dataNew) && !string.Equals(this.dataNew, this.dataOlder, StringComparison.InvariantCultureIgnoreCase))
             {
                 this.useFirst = false;
@@ -62,11 +61,23 @@ namespace Demo.GroupData.Models
         }
         private readonly string dataOlder;
 
+        public string DataColumnOlder
+        {
+            get { return this.Show ? this.dataOlder : this.dataShortOlder; }
+        }
+        private string dataShortOlder;
+
         public string DataNew
         {
             get { return this.dataNew; }
         }
         private readonly string dataNew;
+
+        public string DataColumnNew
+        {
+            get { return this.Show ? this.dataNew : this.dataShortNew; }
+        }
+        private string dataShortNew;
 
         public bool UseOlder
         {
@@ -106,7 +117,15 @@ namespace Demo.GroupData.Models
         }
         private bool useNew;
 
-        public int Height { get; set; }
         public bool Show { get; set; }
+        public string GetDataShort(string data)
+        {
+            if (string.IsNullOrWhiteSpace(data))
+                return data;
+            int lenghtRow1 = data.IndexOf('\n');
+            if (lenghtRow1 > 0)
+                return data.Substring(0, lenghtRow1);
+            return data;
+        }
     }
 }

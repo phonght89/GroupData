@@ -179,19 +179,6 @@ namespace Demo.GroupData.Controls
                 this.gridView1.RefreshData();
             }
         }
-        private void gridView1_CalcRowHeight(object sender, DevExpress.XtraGrid.Views.Grid.RowHeightEventArgs e)
-        {
-            var dataRow = this.gridView1.GetRow(e.RowHandle);
-            if (dataRow != null)
-            {
-                var item = (DataItemViewModelBase)this.gridView1.GetRow(e.RowHandle);
-                if (item.Show)
-                    e.RowHeight = 15 * item.Height;
-                else e.RowHeight = 15;
-            }
-            else e.RowHeight = 15;
-
-        }
 
         private void gridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
@@ -209,7 +196,6 @@ namespace Demo.GroupData.Controls
                 }
             }
         }
-
         private void gridView1_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
         {
             var gr = sender as GridView;
@@ -220,8 +206,7 @@ namespace Demo.GroupData.Controls
                 {
                     e.Cancel = string.IsNullOrEmpty(dataViewModel.DataOlder);
                 }
-                if (this.gridView1.FocusedColumn.FieldName == "UseNew")
-                {
+                if (this.gridView1.FocusedColumn.FieldName == "UseNew"){
                     e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
                 }
             }
