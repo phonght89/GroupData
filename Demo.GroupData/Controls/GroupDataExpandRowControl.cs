@@ -44,6 +44,7 @@ namespace Demo.GroupData.Controls
         private void ReSizeGridByData()
         {
             this.gridControl1.Height = this.GetInvisibleRowsHeight();
+            this.gridView1.LayoutChanged();
             this.height = this.gridControl1.Height + 46;
             this.Height = this.height;
         }
@@ -77,7 +78,7 @@ namespace Demo.GroupData.Controls
             this.showGroup = !this.showGroup;
             if (this.showGroup)
             {
-                ReSizeGridByData();
+                //ReSizeGridByData();
                 this.Height = this.height;
                 this.btExpand.ImageIndex = 0;
             }
@@ -167,6 +168,8 @@ namespace Demo.GroupData.Controls
                 var item = (DataItemViewModelBase)row;
                 item.Show = true;
                 this.gridView1.RefreshData();
+                this.gridView1.LayoutChanged();
+                ReSizeGridByData();
             }
         }
 
@@ -178,6 +181,8 @@ namespace Demo.GroupData.Controls
                 var item = (DataItemViewModelBase)row;
                 item.Show = false;
                 this.gridView1.RefreshData();
+                this.gridView1.LayoutChanged();
+                ReSizeGridByData();
             }
         }
 
