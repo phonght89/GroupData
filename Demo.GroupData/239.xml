@@ -35,6 +35,7 @@
     <nationality>VietNam</nationality>
     <responsiblePerson />
     <clientCase>
+      <Id>181</Id>
       <subjectArea>Sozialhilfe</subjectArea>
       <anamnesis>2014-07-02</anamnesis>
       <responsibleCommunity>
@@ -63,14 +64,14 @@
       </address>
     </documentData>
     <documentData>
-      <Id>625</Id>
+      <Id>626</Id>
       <keyword>Eingelesenes Dokument</keyword>
       <affect />
       <date>2015-05-19</date>
       <type />
       <topic />
       <documentObject>Sozialhilfe</documentObject>
-      <fileName>G:\klib\dokumente\scan\KDXA.pdf</fileName>
+      <fileName>G:\klib\dokumente\scan\KDXB.pdf</fileName>
       <address>
         <firstName />
         <lastName />
@@ -87,22 +88,6 @@
       <topic />
       <documentObject>Sozialhilfe</documentObject>
       <fileName>G:\klib\dokumente\scan\KDXD.pdf</fileName>
-      <address>
-        <firstName />
-        <lastName />
-        <postcode>0</postcode>
-        <street />
-      </address>
-    </documentData>
-    <documentData>
-      <Id>629</Id>
-      <keyword>Eingelesenes Dokument</keyword>
-      <affect />
-      <date>2015-05-19</date>
-      <type />
-      <topic />
-      <documentObject>Sozialhilfe</documentObject>
-      <fileName>G:\klib\dokumente\scan\KDXE.pdf</fileName>
       <address>
         <firstName />
         <lastName />
