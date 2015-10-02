@@ -212,7 +212,8 @@ namespace Demo.GroupData.Controls
                 {
                     e.Cancel = string.IsNullOrEmpty(dataViewModel.DataOlder);
                 }
-                if (this.gridView1.FocusedColumn.FieldName == "UseNew"){
+                if (this.gridView1.FocusedColumn.FieldName == "UseNew")
+                {
                     e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
                 }
             }

@@ -30,6 +30,7 @@ namespace Demo.GroupData.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupDataExpandRowControl));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -42,7 +43,7 @@ namespace Demo.GroupData.Controls
             this.check_all_older_group = new DevExpress.XtraEditors.CheckEdit();
             this.panelExpand = new System.Windows.Forms.Panel();
             this.btExpand = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.panel_dataOlder = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -107,7 +108,7 @@ namespace Demo.GroupData.Controls
             this.labelControl2.Location = new System.Drawing.Point(167, 14);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 16);
+            this.labelControl2.Size = new System.Drawing.Size(40, 13);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Klient-/n";
             // 
@@ -129,7 +130,7 @@ namespace Demo.GroupData.Controls
             this.check_all_new_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_new_group.Name = "check_all_new_group";
             this.check_all_new_group.Properties.Caption = "Alle";
-            this.check_all_new_group.Size = new System.Drawing.Size(55, 20);
+            this.check_all_new_group.Size = new System.Drawing.Size(55, 19);
             this.check_all_new_group.TabIndex = 1;
             this.check_all_new_group.CheckStateChanged += new System.EventHandler(this.check_all_new_group1_CheckStateChanged);
             // 
@@ -152,7 +153,7 @@ namespace Demo.GroupData.Controls
             this.check_all_older_group.Margin = new System.Windows.Forms.Padding(4);
             this.check_all_older_group.Name = "check_all_older_group";
             this.check_all_older_group.Properties.Caption = "Alle";
-            this.check_all_older_group.Size = new System.Drawing.Size(52, 20);
+            this.check_all_older_group.Size = new System.Drawing.Size(52, 19);
             this.check_all_older_group.TabIndex = 0;
             this.check_all_older_group.CheckedChanged += new System.EventHandler(this.check_all_older_group1_CheckedChanged);
             // 
@@ -213,7 +214,7 @@ namespace Demo.GroupData.Controls
             this.labelControl1.Location = new System.Drawing.Point(163, 13);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 16);
+            this.labelControl1.Size = new System.Drawing.Size(40, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Klient-/n";
             // 
@@ -248,6 +249,7 @@ namespace Demo.GroupData.Controls
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowColumnHeaders = false;
+            this.gridView1.OptionsView.ShowGroupExpandCollapseButtons = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);

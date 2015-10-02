@@ -146,20 +146,30 @@ namespace Demo.GroupData
         {
             foreach (var item in this.measureLawVm.Items.Cast<DataItemViewModelBase>())
             {
-                if (!string.IsNullOrWhiteSpace(item.Id))
+                if (item.Ids.Count > 0)
                 {
                     if (item.UseOlder || !item.UseNew)
                     {
-                        model.measureLaws.Add((measureLawType)item.ModelOlder);
+                        foreach (var measureLaw in item.ListModelOlder)
+                        {
+                            model.measureLaws.Add(measureLaw);
+                        }
+                        
                     }
                     else
                     {
-                        model.measureLaws.Add((measureLawType)item.ModelNew);
+                        foreach (var measureLaw in item.ListModelNew)
+                        {
+                            model.measureLaws.Add(measureLaw);
+                        }
                     }
                 }
                 else
                 {
-                    model.measureLaws.Add((measureLawType)item.ModelNew);
+                    foreach (var measureLaw in item.ListModelNew)
+                    {
+                        model.measureLaws.Add(measureLaw);
+                    }
                 }
             }
         }

@@ -2439,14 +2439,29 @@ namespace Demo.GroupData.Models
 
         public override string ToString()
         {
-            return string.Format("- AgeCategory: {0}" +
-                                 "\n- KindOfAction: {1}" +
-                                 "\n- Foundation: {2}" +
-                                 "\n- CourtDecision: {3}" +
-                                 "\n- TakeoverOn: {4}" +
-                                 "\n- TakeoverBy: {5}" +
-                                 "\n- Repeal: {6}" +
-                                 "\n- RepealReason: {7}", ageCategory, kindOfAction, foundation, courtDecision, takeoverOn, takeoverBy, repeal, repealReason);
+            return string.Format("- {0} ({1}) " +
+                                 "\n + {2}" +
+                                 "\n + {3}", this.kindOfAction, this.foundation, this.GetDataMT(), this.GetDataMA());
+        }
+
+        public string GetDataMT()
+        {
+            var results = "Mandatsträger/in";
+            foreach (var mt in this.mtsField)
+            {
+                results += string.Format("\n  + {0} ({1} - {2})", mt.employee, mt.from, mt.to);
+            }
+            return results;
+        }
+
+        public string GetDataMA()
+        {
+            var results = "Aufgaben";
+            foreach (var ma in this.masField)
+            {
+                results += string.Format("\n  + {0} {3} ({1} - {2})", ma.area, ma.from, ma.until,ma.article);
+            }
+            return results;
         }
         
         public string Id

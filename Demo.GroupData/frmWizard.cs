@@ -74,24 +74,24 @@ namespace Demo.GroupData
             FileInfo olderfile = new FileInfo(Application.StartupPath + "\\" + "old.xml"); FileInfo newfile = new FileInfo(Application.StartupPath + "\\" + "new.xml");
             contentType modelold = Deserializer<contentType>(olderfile);
             contentType modelnew = Deserializer<contentType>(newfile);
-            clientInfoVm = new ClientInfoGroupItemViewModel(modelold.clientInfo, modelnew.clientInfo);
-            relativeInfoVm = new RelativeInfoGroupItemViewModel(modelold.clientInfo.Id, modelold.relativeInfos, modelnew.relativeInfos);
-            documentDataVm = new DocumentDataGroupItemViewModel(modelold.clientInfo.Id, modelold.documentDatas, modelnew.documentDatas);
-            measureLawVm = new MeasureLawGroupItemViewModel(modelold.clientInfo.Id, modelold.measureLaws, modelnew.measureLaws);
+            this.clientInfoVm = new ClientInfoGroupItemViewModel(modelold.clientInfo, modelnew.clientInfo);
+            this.relativeInfoVm = new RelativeInfoGroupItemViewModel(modelold.clientInfo.Id, modelold.relativeInfos, modelnew.relativeInfos);
+            this.documentDataVm = new DocumentDataGroupItemViewModel(modelold.clientInfo.Id, modelold.documentDatas, modelnew.documentDatas);
+            this.measureLawVm = new MeasureLawGroupItemViewModel(modelold.clientInfo.Id, modelold.measureLaws, modelnew.measureLaws);
 
-            var measureLawGroup = new GroupDataExpandRowControl(measureLawVm, "Massnahmen");
+            var measureLawGroup = new GroupDataExpandRowControl(this.measureLawVm, "Massnahmen");
             measureLawGroup.Dock = DockStyle.Top;
             this.xtraScrollableControl1.Controls.Add(measureLawGroup);
 
-            var documentDataGroup = new GroupDataExpandRowControl(documentDataVm, "Dokumente");
+            var documentDataGroup = new GroupDataExpandRowControl(this.documentDataVm, "Dokumente");
             documentDataGroup.Dock = DockStyle.Top;
             this.xtraScrollableControl1.Controls.Add(documentDataGroup);
 
-            var relativeInfoGroup = new GroupDataExpandRowControl(relativeInfoVm, "Angehörige");
+            var relativeInfoGroup = new GroupDataExpandRowControl(this.relativeInfoVm, "Angehörige");
             relativeInfoGroup.Dock = DockStyle.Top;
             this.xtraScrollableControl1.Controls.Add(relativeInfoGroup);
 
-            var clientInfoGroup = new GroupDataControl(clientInfoVm);
+            var clientInfoGroup = new GroupDataControl(this.clientInfoVm);
             clientInfoGroup.Dock = DockStyle.Top;
             this.xtraScrollableControl1.Controls.Add(clientInfoGroup);
 
@@ -120,23 +120,80 @@ namespace Demo.GroupData
             }
         }
 
-        private void CreateControlWithData(GroupItemModelBase dataModel, string headerText)
+        private void GetDocumentData(contentType model)
         {
-            if (dataModel.ExpandRow)
+            foreach (var item in this.documentDataVm.Items.Cast<DataItemViewModelBase>())
             {
-                var controlGroup = new GroupDataExpandRowControl(dataModel, headerText);
-                controlGroup.Dock = DockStyle.Top;
-                this.xtraScrollableControl1.Controls.Add(controlGroup);
-            }
-            else
-            {
-                var controlGroup = new GroupDataControl(dataModel);
-                controlGroup.Dock = DockStyle.Top;
-                this.xtraScrollableControl1.Controls.Add(controlGroup);
+                if (!string.IsNullOrWhiteSpace(item.Id))
+                {
+                    if (item.UseOlder || !item.UseNew)
+                    {
+                        model.documentDatas.Add((documentDataType)item.ModelOlder);
+                    }
+                    else
+                    {
+                        model.documentDatas.Add((documentDataType)item.ModelNew);
+                    }
+                }
+                else
+                {
+                    model.documentDatas.Add((documentDataType)item.ModelNew);
+                }
             }
         }
 
+        private void GetRelativeInfo(contentType model)
+        {
+            foreach (var item in this.relativeInfoVm.Items.Cast<DataItemViewModelBase>())
+            {
+                if (!string.IsNullOrWhiteSpace(item.Id))
+                {
+                    if (item.UseOlder || !item.UseNew)
+                    {
+                        model.relativeInfos.Add((relativeInfoType)item.ModelOlder);
+                    }
+                    else
+                    {
+                        model.relativeInfos.Add((relativeInfoType)item.ModelNew);
+                    }
+                }
+                else
+                {
+                    model.relativeInfos.Add((relativeInfoType)item.ModelNew);
+                }
+            }
+        }
 
-        
+        private void GetMeasureLaw(contentType model)
+        {
+            foreach (var item in this.measureLawVm.Items.Cast<DataItemViewModelBase>())
+            {
+                if (item.Ids.Count > 0)
+                {
+                    if (item.UseOlder || !item.UseNew)
+                    {
+                        foreach (var measureLaw in item.ListModelOlder)
+                        {
+                            model.measureLaws.Add(measureLaw);
+                        }
+
+                    }
+                    else
+                    {
+                        foreach (var measureLaw in item.ListModelNew)
+                        {
+                            model.measureLaws.Add(measureLaw);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var measureLaw in item.ListModelNew)
+                    {
+                        model.measureLaws.Add(measureLaw);
+                    }
+                }
+            }
+        }
     }
 }

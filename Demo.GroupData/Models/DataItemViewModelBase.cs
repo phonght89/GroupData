@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Demo.GroupData.Models
 {
@@ -6,6 +7,8 @@ namespace Demo.GroupData.Models
     {
         public dynamic ModelOlder { get; set; }
         public dynamic ModelNew { get; set; }
+        public List<measureLawType> ListModelOlder { get; set; }
+        public List<measureLawType> ListModelNew { get; set; }
 
         public DataItemViewModelBase(string id, string name, string dataOlder, string dataNew, bool? useFirst, dynamic modelOlder = null, dynamic modelNew = null, bool show = false)
         {
@@ -34,6 +37,39 @@ namespace Demo.GroupData.Models
                 this.useNew = false;
             }
         }
+
+        public DataItemViewModelBase(List<string> ids, string name, string dataOlder, string dataNew, bool? useFirst, List<measureLawType> listmodelOlder, List<measureLawType> listmodelNew, bool show = false)
+        {
+            this.ids = ids;
+            this.name = name;
+            this.Show = show;
+            this.ListModelOlder = listmodelOlder;
+            this.ListModelNew = listmodelNew;
+            this.dataNew = dataNew;
+            this.dataShortNew = GetDataShort(dataNew);
+            this.dataOlder = dataOlder;
+            this.dataShortOlder = GetDataShort(dataOlder);
+            this.useFirst = useFirst;
+            this.useOlder = useFirst ?? false;
+            this.useNew = useFirst != null && !useOlder;
+            if (!string.IsNullOrEmpty(dataNew) && !string.Equals(this.dataNew, this.dataOlder, StringComparison.InvariantCultureIgnoreCase))
+            {
+                this.useFirst = false;
+                this.useOlder = false;
+                this.useNew = true;
+            }
+            else
+            {
+                this.useFirst = true;
+                this.useOlder = true;
+                this.useNew = false;
+            }
+        }
+        public List<string> Ids
+        {
+            get { return this.ids; }
+        }
+        private readonly List<string> ids;
         public string Id
         {
             get { return this.id; }
