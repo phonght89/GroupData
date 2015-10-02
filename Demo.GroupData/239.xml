@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="eCH-0039G1T1-1-0">
+  <clientInfo>
+    <Id>239</Id>
+    <title>Fräulein</title>
+    <lastName>Šuša</lastName>
+    <firstName>Šusan</firstName>
+    <supplement />
+    <street />
+    <postcodePlace>
+      <postcode>5000</postcode>
+      <place>Aarau</place>
+      <canton>AG</canton>
+    </postcodePlace>
+    <telephoneP />
+    <telephoneG />
+    <mobile />
+    <email />
+    <registeredResidence>
+      <postcode>5000</postcode>
+      <place>Aarau</place>
+      <canton>AG</canton>
+    </registeredResidence>
+    <address />
+    <sex>andere</sex>
+    <maritalStatus />
+    <confession />
+    <dateOfBirth>0001-01-01</dateOfBirth>
+    <nnss />
+    <hometown>
+      <postcode>0</postcode>
+      <place />
+      <canton />
+    </hometown>
+    <nationality>VietNam</nationality>
+    <responsiblePerson />
+    <clientCase>
+      <subjectArea>Sozialhilfe</subjectArea>
+      <anamnesis>2014-07-02</anamnesis>
+      <responsibleCommunity>
+        <postcode>0</postcode>
+        <place>Delley-Portalban</place>
+        <canton />
+      </responsibleCommunity>
+    </clientCase>
+  </clientInfo>
+  <relativeInfos />
+  <documentDatas>
+    <documentData>
+      <Id>624</Id>
+      <keyword>Eingelesenes Dokument</keyword>
+      <affect />
+      <date>2015-05-19</date>
+      <type />
+      <topic />
+      <documentObject>Sozialhilfe</documentObject>
+      <fileName>G:\klib\dokumente\scan\KDX0.pdf</fileName>
+      <address>
+        <firstName />
+        <lastName />
+        <postcode>0</postcode>
+        <street />
+      </address>
+    </documentData>
+    <documentData>
+      <Id>625</Id>
+      <keyword>Eingelesenes Dokument</keyword>
+      <affect />
+      <date>2015-05-19</date>
+      <type />
+      <topic />
+      <documentObject>Sozialhilfe</documentObject>
+      <fileName>G:\klib\dokumente\scan\KDXA.pdf</fileName>
+      <address>
+        <firstName />
+        <lastName />
+        <postcode>0</postcode>
+        <street />
+      </address>
+    </documentData>
+    <documentData>
+      <Id>628</Id>
+      <keyword>Eingelesenes Dokument</keyword>
+      <affect />
+      <date>2015-05-19</date>
+      <type />
+      <topic />
+      <documentObject>Sozialhilfe</documentObject>
+      <fileName>G:\klib\dokumente\scan\KDXD.pdf</fileName>
+      <address>
+        <firstName />
+        <lastName />
+        <postcode>0</postcode>
+        <street />
+      </address>
+    </documentData>
+    <documentData>
+      <Id>629</Id>
+      <keyword>Eingelesenes Dokument</keyword>
+      <affect />
+      <date>2015-05-19</date>
+      <type />
+      <topic />
+      <documentObject>Sozialhilfe</documentObject>
+      <fileName>G:\klib\dokumente\scan\KDXE.pdf</fileName>
+      <address>
+        <firstName />
+        <lastName />
+        <postcode>0</postcode>
+        <street />
+      </address>
+    </documentData>
+  </documentDatas>
+  <measureLaws>
+    <measureLaw>
+      <Id>2</Id>
+      <ageCategory>Kinder</ageCategory>
+      <kindOfAction>Beispiel</kindOfAction>
+      <foundation>2014-12-02</foundation>
+      <courtDecision>0001-01-01</courtDecision>
+      <takeoverOn>2015-07-06</takeoverOn>
+      <takeoverBy />
+      <repeal>0001-01-01</repeal>
+      <repealReason />
+      <transferOn>0001-01-01</transferOn>
+      <transferTo />
+      <note />
+      <mts>
+        <mt>
+          <typeOfElectedRepresentative>fsafsdf</typeOfElectedRepresentative>
+          <employee>
+            <firstName>Vorname</firstName>
+            <lastName>Administrator Vorname</lastName>
+          </employee>
+          <address>
+            <firstName />
+            <lastName />
+            <postcode>0</postcode>
+            <street />
+          </address>
+          <from>2014-12-02</from>
+          <to>0001-01-01</to>
+          <note />
+        </mt>
+      </mts>
+      <mas>
+        <ma>
+          <article>blabla</article>
+          <typeOfTask />
+          <from>2014-12-02</from>
+          <until>0001-01-01</until>
+          <area>0,0,0,0,0,0,0,0</area>
+          <mandateholder1>
+            <typeOfElectedRepresentative>fsafsdf</typeOfElectedRepresentative>
+            <employee>
+              <firstName>Vorname</firstName>
+              <lastName>Administrator Vorname</lastName>
+            </employee>
+            <address>
+              <firstName />
+              <lastName />
+              <postcode>0</postcode>
+              <street />
+            </address>
+            <from>2014-12-02</from>
+            <to>0001-01-01</to>
+            <note />
+          </mandateholder1>
+        </ma>
+      </mas>
+    </measureLaw>
+    <measureLaw>
+      <Id>3</Id>
+      <ageCategory>Kinder</ageCategory>
+      <kindOfAction>Beispiel</kindOfAction>
+      <foundation>2015-07-07</foundation>
+      <courtDecision>2015-07-06</courtDecision>
+      <takeoverOn>2015-08-01</takeoverOn>
+      <takeoverBy />
+      <repeal>0001-01-01</repeal>
+      <repealReason />
+      <transferOn>0001-01-01</transferOn>
+      <transferTo />
+      <note />
+      <mts>
+        <mt>
+          <typeOfElectedRepresentative>fsafsdf</typeOfElectedRepresentative>
+          <employee>
+            <firstName>Peter</firstName>
+            <lastName>Fleissig Peter</lastName>
+          </employee>
+          <address>
+            <firstName />
+            <lastName />
+            <postcode>0</postcode>
+            <street />
+          </address>
+          <from>2015-08-01</from>
+          <to>0001-01-01</to>
+          <note />
+        </mt>
+      </mts>
+      <mas>
+        <ma>
+          <article>blabla</article>
+          <typeOfTask />
+          <from>2015-08-01</from>
+          <until>0001-01-01</until>
+          <area>0,0,0,0,0,0,0,0</area>
+          <mandateholder1>
+            <typeOfElectedRepresentative>fsafsdf</typeOfElectedRepresentative>
+            <employee>
+              <firstName>Peter</firstName>
+              <lastName>Fleissig Peter</lastName>
+            </employee>
+            <address>
+              <firstName />
+              <lastName />
+              <postcode>0</postcode>
+              <street />
+            </address>
+            <from>2015-08-01</from>
+            <to>0001-01-01</to>
+            <note />
+          </mandateholder1>
+        </ma>
+        <ma>
+          <article>261651651al20kaljwkzjwtjudtwjutd</article>
+          <typeOfTask />
+          <from>2015-08-01</from>
+          <until>0001-01-01</until>
+          <area>0,0,0,0,0,0,0,0</area>
+          <mandateholder1>
+            <typeOfElectedRepresentative>fsafsdf</typeOfElectedRepresentative>
+            <employee>
+              <firstName>Peter</firstName>
+              <lastName>Fleissig Peter</lastName>
+            </employee>
+            <address>
+              <firstName />
+              <lastName />
+              <postcode>0</postcode>
+              <street />
+            </address>
+            <from>2015-08-01</from>
+            <to>0001-01-01</to>
+            <note />
+          </mandateholder1>
+        </ma>
+        <ma>
+          <article>1518976164u76r</article>
+          <typeOfTask />
+          <from>2015-08-01</from>
+          <until>0001-01-01</until>
+          <area>0,0,0,0,0,0,0,0</area>
+          <mandateholder1>
+            <typeOfElectedRepresentative>fsafsdf</typeOfElectedRepresentative>
+            <employee>
+              <firstName>Peter</firstName>
+              <lastName>Fleissig Peter</lastName>
+            </employee>
+            <address>
+              <firstName />
+              <lastName />
+              <postcode>0</postcode>
+              <street />
+            </address>
+            <from>2015-08-01</from>
+            <to>0001-01-01</to>
+            <note />
+          </mandateholder1>
+        </ma>
+      </mas>
+    </measureLaw>
+  </measureLaws>
+</contentType>
