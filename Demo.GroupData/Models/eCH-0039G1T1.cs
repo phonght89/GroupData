@@ -4106,7 +4106,8 @@ namespace Demo.GroupData.Models
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "eCH-0039G1T1-1-0", IsNullable = true)]
     public partial class clientCaseType
     {
-
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        private string idField;
         [EditorBrowsable(EditorBrowsableState.Never)]
         private string subjectAreaField;
 
@@ -4122,7 +4123,11 @@ namespace Demo.GroupData.Models
         {
             this.responsibleCommunityField = new placeType();
         }
-
+        public string Id
+        {
+            get { return this.idField; }
+            set { this.idField = value; }
+        }
         public string subjectArea
         {
             get
