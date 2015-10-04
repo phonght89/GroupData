@@ -3308,18 +3308,56 @@ namespace Demo.GroupData.Models
 
         public override string ToString()
         {
-            return string.Format("- {0}" +
-                                 "\n- First Name: {1}" +
-                                 "\n- Last Nsame: {2}" +
-                                 "\n- Supplement: {3}" +
-                                 "\n- Street: {4}" +
-                                 "\n- Post Code: {5}" +
-                                 "\n- Place: {6}" +
-                                 "\n- Canton: {7}" +
-                                 "\n- Telephone 1: {8}" +
-                                 "\n- Telephone 2: {9}" +
-                                 "\n- Mobile: {10}" +
-                                 "\n- Email: {11}", titleField, firstName, lastName, supplement, street, postcodePlace.postcode, postcodePlace.place, postcodePlace.canton, telephone1, telephone2, mobile, email);
+            return string.Format("- {0} {1} {2}" +
+                                 "\n- First Name: {3}" +
+                                 "\n- Last Nsame: {4}" +
+                                 "\n- Supplement: {5}" +
+                                 "\n- Street: {6}" +
+                                 "\n- Post Code: {7}" +
+                                 "\n- Place: {8}" +
+                                 "\n- Canton: {9}" +
+                                 "\n- Telephone 1: {10}" +
+                                 "\n- Telephone 2: {11}" +
+                                 "\n- Mobile: {12}" +
+                                 "\n- Email: {13}" +
+                                 "\n- Date of Birth: {14}" +
+                                 "\n- Sex: {15}" +
+                                 "\n- Marital Status: {16}" +
+                                 "\n- nnss: {17}" +
+                                 "\n- Confession: {18}" +
+                                 "\n- Relationship: {19}" +
+                                 "\n- Hometown postcode: {20}" +
+                                 "\n- Hometown place: {21}" +
+                                 "\n- Hometown canton: {22}" +
+                                 "{23}" +
+                                 "\n- Nationality: {24}" +
+                                 "\n- UE: {25}" +
+                                 "\n- InHouseHold: {26}",
+                                 titleField, firstName, lastName,
+                                 firstName,
+                                 lastName,
+                                 supplement,
+                                 street,
+                                 postcodePlace.postcode,
+                                 postcodePlace.place,
+                                 postcodePlace.canton,
+                                 telephone1,
+                                 telephone2,
+                                 mobile,
+                                 email,
+                                 dateOfBirth,
+                                 sex,
+                                 maritalStatus,
+                                 nnss,
+                                 confession,
+                                 relationship,
+                                 hometown.postcode,
+                                 hometown.place,
+                                 hometown.canton,
+                                 address,
+                                 nationality,
+                                 ue,
+                                 inHousehold);
         }
 
         public string Id
