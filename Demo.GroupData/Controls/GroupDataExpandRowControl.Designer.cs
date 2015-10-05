@@ -296,6 +296,7 @@ namespace Demo.GroupData.Controls
             // 
             // rtItemGrid
             // 
+            this.rtItemGrid.MaxHeight = 5000;
             this.rtItemGrid.Name = "rtItemGrid";
             this.rtItemGrid.ShowCaretInReadOnly = false;
             // 
