@@ -255,8 +255,8 @@ namespace Demo.GroupData.Controls
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);
-            this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChanged);
             // 
             // colExpand

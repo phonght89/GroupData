@@ -21,7 +21,7 @@ namespace Demo.GroupData.Controls
         {
             this.InitializeComponent();
         }
-        public GroupDataExpandRowControl(GroupItemModelBase data,string headerText)
+        public GroupDataExpandRowControl(GroupItemModelBase data, string headerText)
         {
             this.InitializeComponent();
             this.dataItem = data;
@@ -91,53 +91,45 @@ namespace Demo.GroupData.Controls
 
         private void check_all_older_group1_CheckedChanged(object sender, System.EventArgs e)
         {
-            this.check_all_new_group.Checked = !this.check_all_older_group.Checked;
-            this.ReloadDataGrid(this.check_all_older_group.Checked);
+            if (this.check_all_older_group.Checked)
+            {
+                this.check_all_new_group.Checked = !this.check_all_older_group.Checked;
+                this.ReloadDataGrid(this.check_all_older_group.Checked);
+            }
         }
         private void check_all_new_group1_CheckStateChanged(object sender, System.EventArgs e)
         {
-            this.check_all_older_group.Checked = !this.check_all_new_group.Checked;
-            this.ReloadDataGrid(this.check_all_older_group.Checked);
+            if (this.check_all_new_group.Checked)
+            {
+                this.check_all_older_group.Checked = !this.check_all_new_group.Checked;
+                this.ReloadDataGrid(this.check_all_older_group.Checked);
+            }
         }
 
         private void ReloadDataGrid(bool useOlder)
         {
             foreach (var item in this.DataItem.Items.Cast<DataItemViewModelBase>())
             {
-                if (useOlder)
-                {
-                    if (!string.IsNullOrWhiteSpace(item.DataOlder))
-                        item.UseOlder = true;
-                }
-                else
-                {
-                    if (!string.IsNullOrWhiteSpace(item.DataNew))
-                        item.UseNew = true;
-                }
+                if (item.UseOlder != useOlder)
+                    item.UseOlder = useOlder;
             }
             this.gridView1.RefreshData();
         }
 
         private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (this.gridView1.GetRow(e.RowHandle) != null)
+            var dataRow = this.gridView1.GetRow(e.RowHandle);
+            if (dataRow != null)
             {
-                var item = (DataItemViewModelBase)this.gridView1.GetRow(e.RowHandle);
+                var item = (DataItemViewModelBase)dataRow;
                 if (e.Column == this.gridView1.Columns["UseOlder"])
                 {
                     var value = e.Value is bool ? (bool?)e.Value : null;
                     if (value != null)
                     {
                         item.UseOlder = value.Value;
-                        this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !value.Value);
-                        //if (value.Value)
-                        //{
-                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], false);
-                        //}
-                        //else
-                        //{
-                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseNew"], !string.IsNullOrWhiteSpace(item.DataNew));
-                        //}
+                        this.gridView1.RefreshRow(e.RowHandle);
+                        this.UpdateCheckAll();
                     }
                 }
                 if (e.Column == this.gridView1.Columns["UseNew"])
@@ -146,15 +138,8 @@ namespace Demo.GroupData.Controls
                     if (value != null)
                     {
                         item.UseNew = value.Value;
-                        this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !value.Value);
-                        //if (value.Value)
-                        //{
-                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], false);
-                        //}
-                        //else
-                        //{
-                        //    this.gridView1.SetRowCellValue(e.RowHandle, gridView1.Columns["UseOlder"], !string.IsNullOrWhiteSpace(item.DataOlder));
-                        //}
+                        this.gridView1.RefreshRow(e.RowHandle);
+                        this.UpdateCheckAll();
                     }
                 }
             }
@@ -202,20 +187,51 @@ namespace Demo.GroupData.Controls
                 }
             }
         }
-        private void gridView1_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
+        //private void gridView1_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
+        //{
+        //    var gr = sender as GridView;
+        //    if (gr.FocusedRowHandle != (int.MinValue + 1))
+        //    {
+        //        var dataViewModel = (DataItemViewModelBase)gridView1.GetRow(gridView1.FocusedRowHandle);
+        //        if (this.gridView1.FocusedColumn.FieldName == "UseOlder")
+        //        {
+        //            e.Cancel = string.IsNullOrEmpty(dataViewModel.DataOlder);
+        //        }
+        //        if (this.gridView1.FocusedColumn.FieldName == "UseNew")
+        //        {
+        //            e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
+        //        }
+        //    }
+        //}
+
+        private void UpdateCheckAll()
         {
-            var gr = sender as GridView;
-            if (gr.FocusedRowHandle != (int.MinValue + 1))
+            if (this.dataItem.Items.Cast<DataItemViewModelBase>().Any(k => k.UseOlder) && this.check_all_new_group.Checked)
             {
-                var dataViewModel = (DataItemViewModelBase)gridView1.GetRow(gridView1.FocusedRowHandle);
-                if (this.gridView1.FocusedColumn.FieldName == "UseOlder")
-                {
-                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataOlder);
-                }
-                if (this.gridView1.FocusedColumn.FieldName == "UseNew")
-                {
-                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
-                }
+                this.check_all_new_group.CheckState = CheckState.Unchecked;
+            }
+            else if (this.dataItem.Items.Cast<DataItemViewModelBase>().Any(k => k.UseNew) && this.check_all_older_group.Checked)
+            {
+                this.check_all_older_group.CheckState = CheckState.Unchecked;
+            }
+            else if (this.dataItem.Items.Cast<DataItemViewModelBase>().All(k => k.UseOlder) && !this.check_all_older_group.Checked)
+            {
+                this.check_all_older_group.CheckState = CheckState.Checked;
+            }
+            else if (this.dataItem.Items.Cast<DataItemViewModelBase>().All(k => k.UseNew) && !this.check_all_new_group.Checked)
+            {
+                this.check_all_new_group.CheckState = CheckState.Checked;
+            }
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            var row = this.gridView1.GetFocusedRow();
+            if (row != null)
+            {
+                var item = (DataItemViewModelBase)row;
+                var listDataOlder = item.ListModelOlder;
+                var listDataNew = item.ListModelNew;
             }
         }
     }
