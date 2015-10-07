@@ -30,7 +30,7 @@
         {
             this.wizardControl1 = new DevExpress.XtraWizard.WizardControl();
             this.PChoosePath = new DevExpress.XtraWizard.WelcomeWizardPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new DevExpress.XtraEditors.PictureEdit();
             this.txtPassZip = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -47,7 +47,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
             this.PChoosePath.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassZip.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.PChooseClient.SuspendLayout();
@@ -92,12 +92,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Demo.GroupData.Properties.Resources.group_add_item;
-            this.pictureBox1.Location = new System.Drawing.Point(540, 20);
+            this.pictureBox1.EditValue = global::Demo.GroupData.Properties.Resources.group_add_item;
+            this.pictureBox1.Location = new System.Drawing.Point(540, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 17);
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
             this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // txtPassZip
             // 
@@ -219,7 +218,7 @@
             this.wizardControl1.ResumeLayout(false);
             this.PChoosePath.ResumeLayout(false);
             this.PChoosePath.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassZip.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.PChooseClient.ResumeLayout(false);
@@ -248,7 +247,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraWizard.WizardPage PFinish;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.PictureEdit pictureBox1;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.xtraScrollableControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
+        private DevExpress.XtraEditors.GroupControl xtraScrollableControl1;
         private DevExpress.XtraEditors.SimpleButton btnSave;
 
     }

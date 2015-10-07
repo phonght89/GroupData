@@ -32,17 +32,17 @@ namespace Demo.GroupData.Controls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupDataControl));
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.panel_dataNew = new System.Windows.Forms.Panel();
+            this.panelHeader = new DevExpress.XtraEditors.PanelControl();
+            this.panel_dataNew = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.panel_checkNew = new System.Windows.Forms.Panel();
+            this.panel_checkNew = new DevExpress.XtraEditors.PanelControl();
             this.check_all_new_group = new DevExpress.XtraEditors.CheckEdit();
-            this.panel_checkOlder = new System.Windows.Forms.Panel();
+            this.panel_checkOlder = new DevExpress.XtraEditors.PanelControl();
             this.check_all_older_group = new DevExpress.XtraEditors.CheckEdit();
-            this.panelExpand = new System.Windows.Forms.Panel();
+            this.panelExpand = new DevExpress.XtraEditors.PanelControl();
             this.btExpand = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.panel_dataOlder = new System.Windows.Forms.Panel();
+            this.panel_dataOlder = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,14 +53,20 @@ namespace Demo.GroupData.Controls
             this.checkItemGrid = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colUseNew = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDataNew = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).BeginInit();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_dataNew)).BeginInit();
             this.panel_dataNew.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_checkNew)).BeginInit();
             this.panel_checkNew.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.check_all_new_group.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_checkOlder)).BeginInit();
             this.panel_checkOlder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.check_all_older_group.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelExpand)).BeginInit();
             this.panelExpand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_dataOlder)).BeginInit();
             this.panel_dataOlder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -70,7 +76,6 @@ namespace Demo.GroupData.Controls
             // 
             // panelHeader
             // 
-            this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHeader.Controls.Add(this.panel_dataNew);
             this.panelHeader.Controls.Add(this.panel_checkNew);
             this.panelHeader.Controls.Add(this.panel_checkOlder);
@@ -86,10 +91,10 @@ namespace Demo.GroupData.Controls
             // 
             // panel_dataNew
             // 
-            this.panel_dataNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_dataNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_dataNew.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_dataNew.Appearance.Options.UseBackColor = true;
             this.panel_dataNew.Controls.Add(this.labelControl2);
-            this.panel_dataNew.Location = new System.Drawing.Point(699, -1);
+            this.panel_dataNew.Location = new System.Drawing.Point(700, 0);
             this.panel_dataNew.MaximumSize = new System.Drawing.Size(370, 49);
             this.panel_dataNew.MinimumSize = new System.Drawing.Size(370, 49);
             this.panel_dataNew.Name = "panel_dataNew";
@@ -107,10 +112,10 @@ namespace Demo.GroupData.Controls
             // 
             // panel_checkNew
             // 
-            this.panel_checkNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_checkNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_checkNew.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_checkNew.Appearance.Options.UseBackColor = true;
             this.panel_checkNew.Controls.Add(this.check_all_new_group);
-            this.panel_checkNew.Location = new System.Drawing.Point(599, -1);
+            this.panel_checkNew.Location = new System.Drawing.Point(600, 0);
             this.panel_checkNew.MaximumSize = new System.Drawing.Size(101, 49);
             this.panel_checkNew.MinimumSize = new System.Drawing.Size(101, 49);
             this.panel_checkNew.Name = "panel_checkNew";
@@ -129,10 +134,10 @@ namespace Demo.GroupData.Controls
             // 
             // panel_checkOlder
             // 
-            this.panel_checkOlder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_checkOlder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_checkOlder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_checkOlder.Appearance.Options.UseBackColor = true;
             this.panel_checkOlder.Controls.Add(this.check_all_older_group);
-            this.panel_checkOlder.Location = new System.Drawing.Point(499, -1);
+            this.panel_checkOlder.Location = new System.Drawing.Point(500, 0);
             this.panel_checkOlder.MaximumSize = new System.Drawing.Size(101, 49);
             this.panel_checkOlder.MinimumSize = new System.Drawing.Size(101, 49);
             this.panel_checkOlder.Name = "panel_checkOlder";
@@ -152,10 +157,10 @@ namespace Demo.GroupData.Controls
             // 
             // panelExpand
             // 
-            this.panelExpand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelExpand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelExpand.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelExpand.Appearance.Options.UseBackColor = true;
             this.panelExpand.Controls.Add(this.btExpand);
-            this.panelExpand.Location = new System.Drawing.Point(-1, -1);
+            this.panelExpand.Location = new System.Drawing.Point(0, 0);
             this.panelExpand.MaximumSize = new System.Drawing.Size(131, 49);
             this.panelExpand.MinimumSize = new System.Drawing.Size(131, 49);
             this.panelExpand.Name = "panelExpand";
@@ -164,7 +169,7 @@ namespace Demo.GroupData.Controls
             // 
             // btExpand
             // 
-            this.btExpand.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btExpand.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.btExpand.Appearance.ForeColor = System.Drawing.Color.White;
             this.btExpand.Appearance.Options.UseBackColor = true;
             this.btExpand.Appearance.Options.UseForeColor = true;
@@ -192,10 +197,10 @@ namespace Demo.GroupData.Controls
             // 
             // panel_dataOlder
             // 
-            this.panel_dataOlder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_dataOlder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_dataOlder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_dataOlder.Appearance.Options.UseBackColor = true;
             this.panel_dataOlder.Controls.Add(this.labelControl1);
-            this.panel_dataOlder.Location = new System.Drawing.Point(129, -1);
+            this.panel_dataOlder.Location = new System.Drawing.Point(130, 0);
             this.panel_dataOlder.MaximumSize = new System.Drawing.Size(371, 49);
             this.panel_dataOlder.MinimumSize = new System.Drawing.Size(371, 49);
             this.panel_dataOlder.Name = "panel_dataOlder";
@@ -213,6 +218,8 @@ namespace Demo.GroupData.Controls
             // 
             // gridControl1
             // 
+            this.gridControl1.EmbeddedNavigator.Appearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.gridControl1.EmbeddedNavigator.Appearance.Options.UseBorderColor = true;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Location = new System.Drawing.Point(0, 46);
             this.gridControl1.MainView = this.gridView1;
@@ -243,7 +250,6 @@ namespace Demo.GroupData.Controls
             this.gridView1.OptionsView.ShowDetailButtons = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
-            //this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChanged);
             // 
@@ -331,15 +337,21 @@ namespace Demo.GroupData.Controls
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "GroupDataControl";
             this.Size = new System.Drawing.Size(1070, 304);
+            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).EndInit();
             this.panelHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panel_dataNew)).EndInit();
             this.panel_dataNew.ResumeLayout(false);
             this.panel_dataNew.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_checkNew)).EndInit();
             this.panel_checkNew.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.check_all_new_group.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_checkOlder)).EndInit();
             this.panel_checkOlder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.check_all_older_group.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelExpand)).EndInit();
             this.panelExpand.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_dataOlder)).EndInit();
             this.panel_dataOlder.ResumeLayout(false);
             this.panel_dataOlder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -366,12 +378,12 @@ namespace Demo.GroupData.Controls
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btExpand;
-        private System.Windows.Forms.Panel panelHeader;
+        private DevExpress.XtraEditors.PanelControl panelHeader;
         private DevExpress.Utils.ImageCollection imageCollection1;
-        private System.Windows.Forms.Panel panel_dataOlder;
-        private System.Windows.Forms.Panel panelExpand;
-        private System.Windows.Forms.Panel panel_checkOlder;
-        private System.Windows.Forms.Panel panel_dataNew;
-        private System.Windows.Forms.Panel panel_checkNew;
+        private DevExpress.XtraEditors.PanelControl panel_dataOlder;
+        private DevExpress.XtraEditors.PanelControl panelExpand;
+        private DevExpress.XtraEditors.PanelControl panel_checkOlder;
+        private DevExpress.XtraEditors.PanelControl panel_dataNew;
+        private DevExpress.XtraEditors.PanelControl panel_checkNew;
     }
 }
