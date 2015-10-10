@@ -78,7 +78,11 @@ namespace Demo.GroupData
             this.relativeInfoVm = new RelativeInfoGroupItemViewModel(modelold.clientInfo.Id, modelold.relativeInfos, modelnew.relativeInfos);
             this.documentDataVm = new DocumentDataGroupItemViewModel(modelold.clientInfo.Id, modelold.documentDatas, modelnew.documentDatas);
             this.measureLawVm = new MeasureLawGroupItemViewModel(modelold.clientInfo.Id, modelold.measureLaws, modelnew.measureLaws);
-
+            var panel = new Panel();
+            panel.Location = new Point(1070, 0);
+            panel.Width = 1;
+            panel.Height = 1;
+            this.xtraScrollableControl1.Controls.Add(panel);
             var measureLawGroup = new GroupDataExpandRowControl(this.measureLawVm, "Massnahmen");
             measureLawGroup.Dock = DockStyle.Top;
             this.xtraScrollableControl1.Controls.Add(measureLawGroup);
