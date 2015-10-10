@@ -32,19 +32,19 @@ namespace Demo.GroupData.Controls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupDataExpandRowControl));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.panelHeader = new DevExpress.XtraEditors.PanelControl();
-            this.panel_dataNew = new DevExpress.XtraEditors.PanelControl();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.panel_dataNew = new System.Windows.Forms.Panel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.panel_checkNew = new DevExpress.XtraEditors.PanelControl();
+            this.panel_checkNew = new System.Windows.Forms.Panel();
             this.check_all_new_group = new DevExpress.XtraEditors.CheckEdit();
-            this.panel_checkOlder = new DevExpress.XtraEditors.PanelControl();
+            this.panel_checkOlder = new System.Windows.Forms.Panel();
             this.check_all_older_group = new DevExpress.XtraEditors.CheckEdit();
-            this.panelExpand = new DevExpress.XtraEditors.PanelControl();
+            this.panelExpand = new System.Windows.Forms.Panel();
             this.btExpand = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.panel_dataOlder = new DevExpress.XtraEditors.PanelControl();
+            this.panel_dataOlder = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -58,20 +58,14 @@ namespace Demo.GroupData.Controls
             this.colDataNew = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExpandRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnShrinkRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).BeginInit();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_dataNew)).BeginInit();
             this.panel_dataNew.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_checkNew)).BeginInit();
             this.panel_checkNew.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.check_all_new_group.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_checkOlder)).BeginInit();
             this.panel_checkOlder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.check_all_older_group.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelExpand)).BeginInit();
             this.panelExpand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_dataOlder)).BeginInit();
             this.panel_dataOlder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -83,6 +77,7 @@ namespace Demo.GroupData.Controls
             // 
             // panelHeader
             // 
+            this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHeader.Controls.Add(this.panel_dataNew);
             this.panelHeader.Controls.Add(this.panel_checkNew);
             this.panelHeader.Controls.Add(this.panel_checkOlder);
@@ -98,10 +93,10 @@ namespace Demo.GroupData.Controls
             // 
             // panel_dataNew
             // 
-            this.panel_dataNew.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_dataNew.Appearance.Options.UseBackColor = true;
+            this.panel_dataNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_dataNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_dataNew.Controls.Add(this.labelControl2);
-            this.panel_dataNew.Location = new System.Drawing.Point(700, -1);
+            this.panel_dataNew.Location = new System.Drawing.Point(699, -1);
             this.panel_dataNew.MaximumSize = new System.Drawing.Size(370, 49);
             this.panel_dataNew.MinimumSize = new System.Drawing.Size(370, 49);
             this.panel_dataNew.Name = "panel_dataNew";
@@ -119,10 +114,10 @@ namespace Demo.GroupData.Controls
             // 
             // panel_checkNew
             // 
-            this.panel_checkNew.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_checkNew.Appearance.Options.UseBackColor = true;
+            this.panel_checkNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_checkNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_checkNew.Controls.Add(this.check_all_new_group);
-            this.panel_checkNew.Location = new System.Drawing.Point(600, -1);
+            this.panel_checkNew.Location = new System.Drawing.Point(599, -1);
             this.panel_checkNew.MaximumSize = new System.Drawing.Size(101, 49);
             this.panel_checkNew.MinimumSize = new System.Drawing.Size(101, 49);
             this.panel_checkNew.Name = "panel_checkNew";
@@ -141,10 +136,10 @@ namespace Demo.GroupData.Controls
             // 
             // panel_checkOlder
             // 
-            this.panel_checkOlder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_checkOlder.Appearance.Options.UseBackColor = true;
+            this.panel_checkOlder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_checkOlder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_checkOlder.Controls.Add(this.check_all_older_group);
-            this.panel_checkOlder.Location = new System.Drawing.Point(500, -1);
+            this.panel_checkOlder.Location = new System.Drawing.Point(499, -1);
             this.panel_checkOlder.MaximumSize = new System.Drawing.Size(101, 49);
             this.panel_checkOlder.MinimumSize = new System.Drawing.Size(101, 49);
             this.panel_checkOlder.Name = "panel_checkOlder";
@@ -164,10 +159,10 @@ namespace Demo.GroupData.Controls
             // 
             // panelExpand
             // 
-            this.panelExpand.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelExpand.Appearance.Options.UseBackColor = true;
+            this.panelExpand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelExpand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelExpand.Controls.Add(this.btExpand);
-            this.panelExpand.Location = new System.Drawing.Point(0, -1);
+            this.panelExpand.Location = new System.Drawing.Point(-1, -1);
             this.panelExpand.MaximumSize = new System.Drawing.Size(131, 49);
             this.panelExpand.MinimumSize = new System.Drawing.Size(131, 49);
             this.panelExpand.Name = "panelExpand";
@@ -176,8 +171,8 @@ namespace Demo.GroupData.Controls
             // 
             // btExpand
             // 
-            this.btExpand.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.btExpand.Appearance.ForeColor = System.Drawing.SystemColors.Control;
+            this.btExpand.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btExpand.Appearance.ForeColor = System.Drawing.Color.White;
             this.btExpand.Appearance.Options.UseBackColor = true;
             this.btExpand.Appearance.Options.UseForeColor = true;
             this.btExpand.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
@@ -204,10 +199,10 @@ namespace Demo.GroupData.Controls
             // 
             // panel_dataOlder
             // 
-            this.panel_dataOlder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_dataOlder.Appearance.Options.UseBackColor = true;
+            this.panel_dataOlder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_dataOlder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_dataOlder.Controls.Add(this.labelControl1);
-            this.panel_dataOlder.Location = new System.Drawing.Point(130, -1);
+            this.panel_dataOlder.Location = new System.Drawing.Point(129, -1);
             this.panel_dataOlder.MaximumSize = new System.Drawing.Size(371, 49);
             this.panel_dataOlder.MinimumSize = new System.Drawing.Size(371, 49);
             this.panel_dataOlder.Name = "panel_dataOlder";
@@ -353,7 +348,7 @@ namespace Demo.GroupData.Controls
             // 
             this.btnExpandRow.AutoHeight = false;
             this.btnExpandRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.down16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.down16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.btnExpandRow.Name = "btnExpandRow";
             this.btnExpandRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnExpandRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnExpandRow_ButtonClick);
@@ -362,7 +357,7 @@ namespace Demo.GroupData.Controls
             // 
             this.btnShrinkRow.AutoHeight = false;
             this.btnShrinkRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.up16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::Demo.GroupData.Properties.Resources.up16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.btnShrinkRow.Name = "btnShrinkRow";
             this.btnShrinkRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnShrinkRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnShrinkRow_ButtonClick);
@@ -377,21 +372,15 @@ namespace Demo.GroupData.Controls
             this.MinimumSize = new System.Drawing.Size(0, 47);
             this.Name = "GroupDataExpandRowControl";
             this.Size = new System.Drawing.Size(1070, 304);
-            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).EndInit();
             this.panelHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panel_dataNew)).EndInit();
             this.panel_dataNew.ResumeLayout(false);
             this.panel_dataNew.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_checkNew)).EndInit();
             this.panel_checkNew.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.check_all_new_group.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_checkOlder)).EndInit();
             this.panel_checkOlder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.check_all_older_group.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelExpand)).EndInit();
             this.panelExpand.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_dataOlder)).EndInit();
             this.panel_dataOlder.ResumeLayout(false);
             this.panel_dataOlder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -420,13 +409,13 @@ namespace Demo.GroupData.Controls
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btExpand;
-        private DevExpress.XtraEditors.PanelControl panelHeader;
+        private System.Windows.Forms.Panel panelHeader;
         private DevExpress.Utils.ImageCollection imageCollection1;
-        private DevExpress.XtraEditors.PanelControl panel_dataOlder;
-        private DevExpress.XtraEditors.PanelControl panelExpand;
-        private DevExpress.XtraEditors.PanelControl panel_checkOlder;
-        private DevExpress.XtraEditors.PanelControl panel_dataNew;
-        private DevExpress.XtraEditors.PanelControl panel_checkNew;
+        private System.Windows.Forms.Panel panel_dataOlder;
+        private System.Windows.Forms.Panel panelExpand;
+        private System.Windows.Forms.Panel panel_checkOlder;
+        private System.Windows.Forms.Panel panel_dataNew;
+        private System.Windows.Forms.Panel panel_checkNew;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnExpandRow;
         private DevExpress.XtraGrid.Columns.GridColumn colExpand;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnShrinkRow;
