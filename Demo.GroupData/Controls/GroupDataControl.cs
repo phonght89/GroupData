@@ -140,22 +140,23 @@ namespace Demo.GroupData.Controls
             }
         }
 
-        //private void gridView1_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
-        //{
-        //    //var gr = sender as GridView;
-        //    //if (gr.FocusedRowHandle != (int.MinValue + 1))
-        //    //{
-        //    //    var dataViewModel = (DataItemViewModelBase)gridView1.GetRow(gridView1.FocusedRowHandle);
-        //    //    if (this.gridView1.FocusedColumn.FieldName == "UseOlder")
-        //    //    {
-        //    //        e.Cancel = string.IsNullOrEmpty(dataViewModel.DataOlder);
-        //    //    }
-        //    //    if (this.gridView1.FocusedColumn.FieldName == "UseNew")
-        //    //    {
-        //    //        e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
-        //    //    }
-        //    //}
-        //}
+        private void gridView1_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var gr = sender as GridView;
+            if (gr.FocusedRowHandle != (int.MinValue + 1))
+            {
+                var dataViewModel = (DataItemViewModelBase)gridView1.GetRow(gridView1.FocusedRowHandle);
+                e.Cancel = dataViewModel.NameColumn == "Street" || dataViewModel.NameColumn == "Mobile";
+                //if (this.gridView1.FocusedColumn.FieldName == "UseOlder")
+                //{
+                //    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataOlder);
+                //}
+                //if (this.gridView1.FocusedColumn.FieldName == "UseNew")
+                //{
+                //    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
+                //}
+            }
+        }
 
         private void UpdateCheckAll()
         {
