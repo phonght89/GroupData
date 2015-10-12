@@ -120,16 +120,16 @@ namespace Demo.GroupData.Models
             get { return this.useOlder; }
             set
             {
-                this.useOlder = value;
-                this.useNew = !value;
-                //if (value)
-                //{
-                //    this.useNew = false;
-                //}
-                //else
-                //{
-                //    this.useNew = !string.IsNullOrWhiteSpace(dataNew);
-                //}
+                //this.useNew = !value;
+                if (value)
+                {
+                    this.useOlder = true;
+                    this.useNew = false;
+                }
+                else
+                {
+                    this.useOlder = string.IsNullOrWhiteSpace(dataNew);this.useNew = !string.IsNullOrWhiteSpace(dataNew);
+                }
             }
         }
         private bool useOlder;

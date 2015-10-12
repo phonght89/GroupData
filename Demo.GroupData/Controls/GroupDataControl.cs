@@ -104,8 +104,7 @@ namespace Demo.GroupData.Controls
         {
             foreach (var item in this.DataItem.Items.Cast<DataItemViewModelBase>())
             {
-                if (item.UseOlder != useOlder)
-                    item.UseOlder = useOlder;
+                item.UseOlder = useOlder;
             }
             this.gridView1.RefreshData();
         }
@@ -146,35 +145,40 @@ namespace Demo.GroupData.Controls
             if (gr.FocusedRowHandle != (int.MinValue + 1))
             {
                 var dataViewModel = (DataItemViewModelBase)gridView1.GetRow(gridView1.FocusedRowHandle);
+                if (this.gridView1.FocusedColumn.FieldName == "UseOlder")
+                {
+                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
+                }
+                if (this.gridView1.FocusedColumn.FieldName == "UseNew")
+                {
+                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
+                }
                 e.Cancel = dataViewModel.NameColumn == "Street" || dataViewModel.NameColumn == "Mobile";
-                //if (this.gridView1.FocusedColumn.FieldName == "UseOlder")
-                //{
-                //    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataOlder);
-                //}
-                //if (this.gridView1.FocusedColumn.FieldName == "UseNew")
-                //{
-                //    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
-                //}
             }
         }
 
         private void UpdateCheckAll()
         {
-            if (this.dataItem.Items.Cast<DataItemViewModelBase>().Any(k => k.UseOlder) && this.check_all_new_group.Checked)
+            if (this.check_all_older_group.Checked)
             {
-                this.check_all_new_group.CheckState = CheckState.Unchecked;
+                if (this.dataItem.Items.Cast<DataItemViewModelBase>().Any(k => k.UseNew))
+                    this.check_all_older_group.CheckState = CheckState.Unchecked;
             }
-            else if (this.dataItem.Items.Cast<DataItemViewModelBase>().Any(k => k.UseNew) && this.check_all_older_group.Checked)
+            else
             {
-                this.check_all_older_group.CheckState = CheckState.Unchecked;
+                if (this.dataItem.Items.Cast<DataItemViewModelBase>().All(k => k.UseOlder))
+                    this.check_all_older_group.CheckState = CheckState.Checked;
             }
-            else if (this.dataItem.Items.Cast<DataItemViewModelBase>().All(k => k.UseOlder) && !this.check_all_older_group.Checked)
+
+            if (this.check_all_new_group.Checked)
             {
-                this.check_all_older_group.CheckState = CheckState.Checked;
+                if (this.dataItem.Items.Cast<DataItemViewModelBase>().Where(k => !string.IsNullOrWhiteSpace(k.DataNew)).Any(k => k.UseOlder))
+                    this.check_all_new_group.CheckState = CheckState.Unchecked;
             }
-            else if (this.dataItem.Items.Cast<DataItemViewModelBase>().All(k => k.UseNew) && !this.check_all_new_group.Checked)
+            else
             {
-                this.check_all_new_group.CheckState = CheckState.Checked;
+                if (this.dataItem.Items.Cast<DataItemViewModelBase>().Where(k => !string.IsNullOrWhiteSpace(k.DataNew)).All(k => k.UseNew))
+                    this.check_all_new_group.CheckState = CheckState.Checked;
             }
         }
     }
