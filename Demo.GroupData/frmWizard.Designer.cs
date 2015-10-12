@@ -185,7 +185,7 @@
             // 
             this.PChooseMap.Controls.Add(this.xtraScrollableControl1);
             this.PChooseMap.Name = "PChooseMap";
-            this.PChooseMap.Size = new System.Drawing.Size(1080, 373);
+            this.PChooseMap.Size = new System.Drawing.Size(1088, 373);
             this.PChooseMap.Text = "Mapping entities";
             // 
             // xtraScrollableControl1
@@ -194,10 +194,9 @@
             this.xtraScrollableControl1.Appearance.Options.UseBackColor = true;
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
-            this.xtraScrollableControl1.MaximumSize = new System.Drawing.Size(1082, 0);
-            this.xtraScrollableControl1.MinimumSize = new System.Drawing.Size(1082, 0);
+            this.xtraScrollableControl1.MaximumSize = new System.Drawing.Size(1088, 0);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(1082, 373);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1088, 373);
             this.xtraScrollableControl1.TabIndex = 0;
             // 
             // PFinish
