@@ -53,7 +53,7 @@ namespace Demo.GroupData.Models
                 
                 var dataNew = documentDataItemNew != null ? documentDataItemNew.ToString() : string.Empty;
 
-                var itemViewModel = new DataItemViewModelBase(documentDataItemOlder.Id, numericalorder.ToString(), dataOlder, dataNew, true, documentDataItemOlder, documentDataItemNew, numericalorder == 1);
+                var itemViewModel = new DataItemViewModelBase(documentDataItemOlder.Id, numericalorder.ToString(), dataOlder, dataNew, true, documentDataItemOlder, documentDataItemNew, numericalorder == 1, documentDataItemOlder.date.ToString());
                 this.Items.Add(itemViewModel);
             }
 
@@ -63,7 +63,7 @@ namespace Demo.GroupData.Models
                 {
                     numericalorder++;
                     var dataNew = documentDataItemNew.ToString();
-                    var itemViewModel = new DataItemViewModelBase(string.Empty, numericalorder.ToString(), string.Empty, dataNew, false, null, documentDataItemNew, numericalorder == 1);
+                    var itemViewModel = new DataItemViewModelBase(string.Empty, numericalorder.ToString(), string.Empty, dataNew, false, null, documentDataItemNew, numericalorder == 1, documentDataItemNew.date.ToString());
                     this.Items.Add(itemViewModel);
                 }
             }

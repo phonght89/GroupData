@@ -10,7 +10,7 @@ namespace Demo.GroupData.Models
         public List<measureLawType> ListModelOlder { get; set; }
         public List<measureLawType> ListModelNew { get; set; }
 
-        public DataItemViewModelBase(string id, string name, string dataOlder, string dataNew, bool? useFirst, dynamic modelOlder = null, dynamic modelNew = null, bool show = false)
+        public DataItemViewModelBase(string id, string name, string dataOlder, string dataNew, bool? useFirst, dynamic modelOlder = null, dynamic modelNew = null, bool show = false, string sortname = null)
         {
             this.id = id;
             this.name = name;
@@ -40,10 +40,10 @@ namespace Demo.GroupData.Models
             Sort = !string.IsNullOrWhiteSpace(dataOlder) && !string.IsNullOrWhiteSpace(dataNew)
                 ? 0
                 : !string.IsNullOrWhiteSpace(dataOlder) ? 1 : 2;
-            SortName = !string.IsNullOrWhiteSpace(dataOlder) ? dataShortOlder : dataShortNew;
+            SortName = sortname ?? (!string.IsNullOrWhiteSpace(dataOlder) ? dataShortOlder : dataShortNew);
         }
 
-        public DataItemViewModelBase(List<string> ids, string name, string dataOlder, string dataNew, bool? useFirst, List<measureLawType> listmodelOlder, List<measureLawType> listmodelNew, bool show = false)
+        public DataItemViewModelBase(List<string> ids, string name, string dataOlder, string dataNew, bool? useFirst, List<measureLawType> listmodelOlder, List<measureLawType> listmodelNew, bool show = false, string sortname = null)
         {
             this.ids = ids;
             this.name = name;
@@ -69,6 +69,11 @@ namespace Demo.GroupData.Models
                 this.useOlder = true;
                 this.useNew = false;
             }
+
+            Sort = !string.IsNullOrWhiteSpace(dataOlder) && !string.IsNullOrWhiteSpace(dataNew)
+                ? 0
+                : !string.IsNullOrWhiteSpace(dataOlder) ? 1 : 2;
+            SortName = sortname ?? (!string.IsNullOrWhiteSpace(dataOlder) ? dataShortOlder : dataShortNew);
         }
         public List<string> Ids
         {
