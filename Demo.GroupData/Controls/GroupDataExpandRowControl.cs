@@ -32,7 +32,7 @@ namespace Demo.GroupData.Controls
         {
             labelControl1.Text = headerText;
             labelControl2.Text = headerText;
-            this.gridControl1.DataSource = this.dataItem.Items;
+            this.gridControl1.DataSource = this.dataItem.Items.OfType<DataItemViewModelBase>().OrderBy(k => k.Sort).ThenBy(k => k.SortName);
             this.gridControl1.Refresh();
         }
 
@@ -45,8 +45,7 @@ namespace Demo.GroupData.Controls
         {
             this.gridControl1.Height = this.GetInvisibleRowsHeight();
             this.gridView1.LayoutChanged();
-            this.height = this.gridControl1.Height + 46;
-            this.Height = this.height;
+            this.height = this.gridControl1.Height + 46;this.Height = this.height;
         }
 
         private int GetInvisibleRowsHeight()

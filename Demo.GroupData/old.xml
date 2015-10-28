@@ -167,8 +167,7 @@
     </documentData>
   </documentDatas>
   <measureLaws>
-    <measureLaw>
-      <Id>200</Id>
+    <measureLaw><Id>200</Id>
       <ageCategory>Kinder</ageCategory>
       <kindOfAction>Beispiel</kindOfAction>
       <foundation>2015-09-26</foundation>

@@ -36,6 +36,11 @@ namespace Demo.GroupData.Models
                 this.useOlder = true;
                 this.useNew = false;
             }
+
+            Sort = !string.IsNullOrWhiteSpace(dataOlder) && !string.IsNullOrWhiteSpace(dataNew)
+                ? 0
+                : !string.IsNullOrWhiteSpace(dataOlder) ? 1 : 2;
+            SortName = !string.IsNullOrWhiteSpace(dataOlder) ? dataShortOlder : dataShortNew;
         }
 
         public DataItemViewModelBase(List<string> ids, string name, string dataOlder, string dataNew, bool? useFirst, List<measureLawType> listmodelOlder, List<measureLawType> listmodelNew, bool show = false)
@@ -128,7 +133,7 @@ namespace Demo.GroupData.Models
                 }
                 else
                 {
-                    this.useOlder = string.IsNullOrWhiteSpace(dataNew);this.useNew = !string.IsNullOrWhiteSpace(dataNew);
+                    this.useOlder = string.IsNullOrWhiteSpace(dataNew); this.useNew = !string.IsNullOrWhiteSpace(dataNew);
                 }
             }
         }
@@ -163,5 +168,8 @@ namespace Demo.GroupData.Models
                 return data.Substring(0, lenghtRow1);
             return data;
         }
+
+        public int Sort { get; set; }
+        public string SortName { get; set; }
     }
 }

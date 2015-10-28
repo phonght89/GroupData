@@ -100,6 +100,22 @@
     </documentData>
     <documentData>
       <Id>301</Id>
+      <keyword>Test fs -&gt; officeatwork</keyword>
+      <affect />
+      <date>2013-08-06</date>
+      <type />
+      <topic />
+      <documentObject>Sozialhilfe</documentObject>
+      <fileName />
+      <address>
+        <firstName>Franz</firstName>
+        <lastName>Beispiel</lastName>
+        <postcode>5600</postcode>
+        <street>Hauptstrasse 99999</street>
+      </address>
+    </documentData>
+    <documentData>
+      <Id>302</Id>
       <keyword>AW: Einladung Vorstellung Redesign KLIB-Modul Asyl 22. August 2006  9.00 Uhr</keyword>
       <affect />
       <date>2006-08-23</date>
