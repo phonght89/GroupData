@@ -98,8 +98,12 @@ namespace Demo.GroupData.Models
         public string NameColumn
         {
             get { return this.name; }
+            set
+            {
+                this.name = value;
+            }
         }
-        private readonly string name;
+        private string name;
 
         public string DataOlder
         {

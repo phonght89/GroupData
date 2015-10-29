@@ -89,14 +89,23 @@ namespace Demo.GroupData.Models
             }
 
             int numericalorder = 0;
+            var listData = new List<DataItemViewModelBase>();
             foreach (var measureLawItem in this.measureLawsGroupByCategory)
             {
-                numericalorder++;
                 var dataOlder = measureLawItem.GetStringDataOlder();
                 var dataNew = measureLawItem.GetStringDataOlder();
 
-                var itemViewModel = new DataItemViewModelBase(measureLawItem.GetIds(), numericalorder.ToString(), dataOlder, dataNew, true, measureLawItem.MeasureLawsOlder, measureLawItem.MeasureLawsNew, numericalorder == 1);
-                this.Items.Add(itemViewModel);
+                var itemViewModel = new DataItemViewModelBase(measureLawItem.GetIds(), string.Empty, dataOlder, dataNew, true, measureLawItem.MeasureLawsOlder, measureLawItem.MeasureLawsNew, false);
+                listData.Add(itemViewModel);
+            }
+
+            // sort
+            foreach (var item in listData.OrderBy(k => k.Sort).ThenBy(k => k.SortName).ToList())
+            {
+                numericalorder++;
+                item.NameColumn = numericalorder.ToString();
+                item.Show = numericalorder == 1;
+                this.Items.Add(item);
             }
         }
     }
