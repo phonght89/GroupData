@@ -39,7 +39,7 @@ namespace Demo.GroupData.Models
 
             Sort = !string.IsNullOrWhiteSpace(dataOlder) && !string.IsNullOrWhiteSpace(dataNew)
                 ? 0
-                : !string.IsNullOrWhiteSpace(dataOlder) ? 1 : 2;
+                : !string.IsNullOrWhiteSpace(dataNew) ? 1 : 2;
             SortName = sortname ?? (!string.IsNullOrWhiteSpace(dataOlder) ? dataShortOlder : dataShortNew);
         }
 
@@ -72,7 +72,7 @@ namespace Demo.GroupData.Models
 
             Sort = !string.IsNullOrWhiteSpace(dataOlder) && !string.IsNullOrWhiteSpace(dataNew)
                 ? 0
-                : !string.IsNullOrWhiteSpace(dataOlder) ? 1 : 2;
+                : !string.IsNullOrWhiteSpace(dataNew) ? 1 : 2;
             SortName = sortname ?? (!string.IsNullOrWhiteSpace(dataOlder) ? dataShortOlder : dataShortNew);
         }
         public List<string> Ids
