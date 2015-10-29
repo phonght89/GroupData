@@ -45,13 +45,14 @@ namespace Demo.GroupData.Controls
         {
             this.gridControl1.Height = this.GetInvisibleRowsHeight();
             this.gridView1.LayoutChanged();
-            this.height = this.gridControl1.Height + 46;this.Height = this.height;
+            this.height = this.gridControl1.Height + 46;
+            this.Height = this.height;
         }
 
         private int GetInvisibleRowsHeight()
         {
             GridViewInfo viewInfo = (GridViewInfo)this.gridView1.GetViewInfo();
-            int gridHeight = viewInfo.CalcRealViewHeight(new Rectangle(0, 0, this.ClientSize.Width, this.ClientSize.Width));
+            int gridHeight = viewInfo.CalcRealViewHeight(new Rectangle(0, 0, this.ClientSize.Width, int.MaxValue));
             return gridHeight;
         }
 
