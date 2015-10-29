@@ -4521,6 +4521,8 @@ namespace Demo.GroupData.Models
             set { this.idField = value; }
         }
 
+        public bool IsChange { get; set; }
+
         public mrMrsType title
         {
             get

@@ -112,7 +112,7 @@ namespace Demo.GroupData
                     using (System.IO.StreamReader file = new System.IO.StreamReader(fi.FullName))
                     {
                         T overview = (T)reader.Deserialize(file);
-                        return (T)Convert.ChangeType(overview, typeof(T)); ;
+                        return (T)Convert.ChangeType(overview, typeof(T));
                     }
                 }
                 return (T)Convert.ChangeType(null, typeof(T));
@@ -124,19 +124,20 @@ namespace Demo.GroupData
             }
         }
 
+        private void GetClientInfoData(contentType model)
+        {
+            model.clientInfo = this.clientInfoVm.GetDataChange();
+        }
+
         private void GetDocumentData(contentType model)
         {
             foreach (var item in this.documentDataVm.Items.Cast<DataItemViewModelBase>())
             {
                 if (!string.IsNullOrWhiteSpace(item.Id))
                 {
-                    if (item.UseOlder || !item.UseNew)
+                    if (item.UseNew)
                     {
                         model.documentDatas.Add((documentDataType)item.ModelOlder);
-                    }
-                    else
-                    {
-                        model.documentDatas.Add((documentDataType)item.ModelNew);
                     }
                 }
                 else
@@ -152,13 +153,9 @@ namespace Demo.GroupData
             {
                 if (!string.IsNullOrWhiteSpace(item.Id))
                 {
-                    if (item.UseOlder || !item.UseNew)
+                    if (item.UseNew)
                     {
                         model.relativeInfos.Add((relativeInfoType)item.ModelOlder);
-                    }
-                    else
-                    {
-                        model.relativeInfos.Add((relativeInfoType)item.ModelNew);
                     }
                 }
                 else
@@ -174,17 +171,9 @@ namespace Demo.GroupData
             {
                 if (item.Ids.Count > 0)
                 {
-                    if (item.UseOlder || !item.UseNew)
+                    if (item.UseNew)
                     {
                         foreach (var measureLaw in item.ListModelOlder)
-                        {
-                            model.measureLaws.Add(measureLaw);
-                        }
-
-                    }
-                    else
-                    {
-                        foreach (var measureLaw in item.ListModelNew)
                         {
                             model.measureLaws.Add(measureLaw);
                         }
