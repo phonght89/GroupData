@@ -43,120 +43,151 @@ namespace Demo.GroupData.Models
 
         public clientInfoType GetDataChange()
         {
-            clientInfoOlder.IsChange = false;
-            if (this.Items.Cast<DataItemViewModelBase>().Any(k => k.UseNew))
+            clientInfoOlder.IsChangeClient = false;
+            clientInfoOlder.IsChangeCase = false;
+
+            foreach (var item in this.Items.Cast<DataItemViewModelBase>())
             {
-                clientInfoOlder.IsChange = true;
-                foreach (var item in this.Items.Cast<DataItemViewModelBase>())
-                {
-                    if (item.UseNew)
-                        switch (item.NameColumn)
-                        {
-                            case "Title":
-                                clientInfoOlder.title = clientInfoNew.title;
-                                break;
-                            case "Last Name":
-                                clientInfoOlder.lastName = clientInfoNew.lastName;
-                                break;
-                            case "First Name":
-                                clientInfoOlder.firstName = clientInfoNew.firstName;
-                                break;
-                            case "Supplement":
-                                clientInfoOlder.supplement = clientInfoNew.supplement;
-                                break;
-                            case "Street":
-                                clientInfoOlder.street = clientInfoNew.street;
-                                break;
-                            case "Post Code":
-                                clientInfoOlder.postcodePlace.postcode = clientInfoNew.postcodePlace.postcode;
-                                break;
-                            case "Place":
-                                clientInfoOlder.postcodePlace.place = clientInfoNew.postcodePlace.place;
-                                break;
-                            case "Canton":
-                                clientInfoOlder.postcodePlace.canton = clientInfoNew.postcodePlace.canton;
-                                break;
-                            case "Telephone P":
-                                clientInfoOlder.telephoneP = clientInfoNew.telephoneP;
-                                break;
-                            case "Telephone G":
-                                clientInfoOlder.telephoneG = clientInfoNew.telephoneG;
-                                break;
-                            case "Mobile":
-                                clientInfoOlder.mobile = clientInfoNew.mobile;
-                                break;
-                            case "Email":
-                                clientInfoOlder.email = clientInfoNew.email;
-                                break;
-                            case "Registered Residence - Post Code":
-                                clientInfoOlder.registeredResidence.postcode =
-                                    clientInfoNew.registeredResidence.postcode;
-                                break;
-                            case "Registered Residence - Place":
-                                clientInfoOlder.registeredResidence.place = clientInfoNew.registeredResidence.place;
-                                break;
-                            case "Registered Residence - Canton":
-                                clientInfoOlder.registeredResidence.canton = clientInfoNew.registeredResidence.canton;
-                                break;
-                            case "Address":
-                                clientInfoOlder.address = clientInfoNew.address;
-                                break;
-                            case "Sex":
-                                clientInfoOlder.sex = clientInfoNew.sex;
-                                break;
-                            case "Marital Status":
-                                clientInfoOlder.maritalStatus = clientInfoNew.maritalStatus;
-                                break;
-                            case "Confession":
-                                clientInfoOlder.confession = clientInfoNew.confession;
-                                break;
-                            case "Date Of Birth":
-                                clientInfoOlder.dateOfBirth = clientInfoNew.dateOfBirth;
-                                break;
-                            case "Nnss":
-                                clientInfoOlder.nnss = clientInfoNew.nnss;
-                                break;
-                            case "Hometown - Post Code":
-                                clientInfoOlder.hometown.postcode = clientInfoNew.hometown.postcode;
-                                break;
-                            case "Hometown - Place":
-                                clientInfoOlder.hometown.place = clientInfoNew.hometown.place;
-                                break;
-                            case "Hometown - Canton":
-                                clientInfoOlder.hometown.canton = clientInfoNew.hometown.canton;
-                                break;
-                            case "Nationality":
-                                clientInfoOlder.nationality = clientInfoNew.nationality;
-                                break;
-                            case "Responsible Person - FirstName":
-                                clientInfoOlder.responsiblePerson.firstName = clientInfoNew.responsiblePerson.firstName;
-                                break;
-                            case "Responsible Person - LastName":
-                                clientInfoOlder.responsiblePerson.lastName = clientInfoNew.responsiblePerson.lastName;
-                                break;
-                            case "Client Case - Subject Area":
-                                clientInfoOlder.clientCase.subjectArea = clientInfoNew.clientCase.subjectArea;
-                                break;
-                            case "Client Case - Anamnesis":
-                                clientInfoOlder.clientCase.anamnesis = clientInfoNew.clientCase.anamnesis;
-                                break;
-                            case "Client Case - Responsible Community - Post Code":
-                                clientInfoOlder.clientCase.responsibleCommunity.postcode =
-                                    clientInfoNew.clientCase.responsibleCommunity.postcode;
-                                break;
-                            case "Client Case - Responsible Community - Place":
-                                clientInfoOlder.clientCase.responsibleCommunity.place =
-                                    clientInfoNew.clientCase.responsibleCommunity.place;
-                                break;
-                            case "Client Case - Responsible Community - Canton":
-                                clientInfoOlder.clientCase.responsibleCommunity.canton =
-                                    clientInfoNew.clientCase.responsibleCommunity.canton;
-                                break;
-                            default:
-                                break;
-                        }
-                }
+                if (item.UseNew)
+                    switch (item.NameColumn)
+                    {
+                        case "Title":
+                            clientInfoOlder.title = clientInfoNew.title;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Last Name":
+                            clientInfoOlder.lastName = clientInfoNew.lastName;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "First Name":
+                            clientInfoOlder.firstName = clientInfoNew.firstName;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Supplement":
+                            clientInfoOlder.supplement = clientInfoNew.supplement;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Street":
+                            clientInfoOlder.street = clientInfoNew.street;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Post Code":
+                            clientInfoOlder.postcodePlace.postcode = clientInfoNew.postcodePlace.postcode;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Place":
+                            clientInfoOlder.postcodePlace.place = clientInfoNew.postcodePlace.place;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Canton":
+                            clientInfoOlder.postcodePlace.canton = clientInfoNew.postcodePlace.canton;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Telephone P":
+                            clientInfoOlder.telephoneP = clientInfoNew.telephoneP;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Telephone G":
+                            clientInfoOlder.telephoneG = clientInfoNew.telephoneG;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Mobile":
+                            clientInfoOlder.mobile = clientInfoNew.mobile;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Email":
+                            clientInfoOlder.email = clientInfoNew.email;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Registered Residence - Post Code":
+                            clientInfoOlder.registeredResidence.postcode =
+                                clientInfoNew.registeredResidence.postcode;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Registered Residence - Place":
+                            clientInfoOlder.registeredResidence.place = clientInfoNew.registeredResidence.place;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Registered Residence - Canton":
+                            clientInfoOlder.registeredResidence.canton = clientInfoNew.registeredResidence.canton;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Address":
+                            clientInfoOlder.address = clientInfoNew.address;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Sex":
+                            clientInfoOlder.sex = clientInfoNew.sex;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Marital Status":
+                            clientInfoOlder.maritalStatus = clientInfoNew.maritalStatus;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Confession":
+                            clientInfoOlder.confession = clientInfoNew.confession;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Date Of Birth":
+                            clientInfoOlder.dateOfBirth = clientInfoNew.dateOfBirth;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Nnss":
+                            clientInfoOlder.nnss = clientInfoNew.nnss;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Hometown - Post Code":
+                            clientInfoOlder.hometown.postcode = clientInfoNew.hometown.postcode;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Hometown - Place":
+                            clientInfoOlder.hometown.place = clientInfoNew.hometown.place;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Hometown - Canton":
+                            clientInfoOlder.hometown.canton = clientInfoNew.hometown.canton;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Nationality":
+                            clientInfoOlder.nationality = clientInfoNew.nationality;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Responsible Person - FirstName":
+                            clientInfoOlder.responsiblePerson.firstName = clientInfoNew.responsiblePerson.firstName;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Responsible Person - LastName":
+                            clientInfoOlder.responsiblePerson.lastName = clientInfoNew.responsiblePerson.lastName;
+                            clientInfoOlder.IsChangeClient = true;
+                            break;
+                        case "Client Case - Subject Area":
+                            clientInfoOlder.clientCase.subjectArea = clientInfoNew.clientCase.subjectArea;
+                            clientInfoOlder.IsChangeCase = true;
+                            break;
+                        case "Client Case - Anamnesis":
+                            clientInfoOlder.clientCase.anamnesis = clientInfoNew.clientCase.anamnesis;
+                            clientInfoOlder.IsChangeCase = true;
+                            break;
+                        case "Client Case - Responsible Community - Post Code":
+                            clientInfoOlder.clientCase.responsibleCommunity.postcode =
+                                clientInfoNew.clientCase.responsibleCommunity.postcode;
+                            clientInfoOlder.IsChangeCase = true;
+                            break;
+                        case "Client Case - Responsible Community - Place":
+                            clientInfoOlder.clientCase.responsibleCommunity.place =
+                                clientInfoNew.clientCase.responsibleCommunity.place;
+                            clientInfoOlder.IsChangeCase = true;
+                            break;
+                        case "Client Case - Responsible Community - Canton":
+                            clientInfoOlder.clientCase.responsibleCommunity.canton =
+                                clientInfoNew.clientCase.responsibleCommunity.canton;
+                            clientInfoOlder.IsChangeCase = true;
+                            break;
+                        default:
+                            break;
+                    }
             }
+
             return clientInfoOlder;
         }
         private void InitData()

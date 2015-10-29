@@ -137,7 +137,7 @@ namespace Demo.GroupData
                 {
                     if (item.UseNew)
                     {
-                        model.documentDatas.Add((documentDataType)item.ModelOlder);
+                        model.documentDatas.Add((documentDataType)item.ModelNew);
                     }
                 }
                 else
@@ -155,7 +155,7 @@ namespace Demo.GroupData
                 {
                     if (item.UseNew)
                     {
-                        model.relativeInfos.Add((relativeInfoType)item.ModelOlder);
+                        model.relativeInfos.Add((relativeInfoType)item.ModelNew);
                     }
                 }
                 else
@@ -173,7 +173,7 @@ namespace Demo.GroupData
                 {
                     if (item.UseNew)
                     {
-                        foreach (var measureLaw in item.ListModelOlder)
+                        foreach (var measureLaw in item.ListModelNew)
                         {
                             model.measureLaws.Add(measureLaw);
                         }
