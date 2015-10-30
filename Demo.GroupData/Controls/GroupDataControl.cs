@@ -147,13 +147,13 @@ namespace Demo.GroupData.Controls
                 var dataViewModel = (DataItemViewModelBase)gridView1.GetRow(gridView1.FocusedRowHandle);
                 if (this.gridView1.FocusedColumn.FieldName == "UseOlder")
                 {
-                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
+                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew) || dataViewModel.NameColumn == "Street" || dataViewModel.NameColumn == "Mobile";
                 }
                 if (this.gridView1.FocusedColumn.FieldName == "UseNew")
                 {
-                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew);
+                    e.Cancel = string.IsNullOrEmpty(dataViewModel.DataNew) || dataViewModel.NameColumn == "Street" || dataViewModel.NameColumn == "Mobile";
                 }
-                e.Cancel = dataViewModel.NameColumn == "Street" || dataViewModel.NameColumn == "Mobile";
+                //e.Cancel = dataViewModel.NameColumn == "Street" || dataViewModel.NameColumn == "Mobile";
             }
         }
 
